@@ -1,0 +1,36 @@
+2025-07-01 15:00:03,300 - INFO - Initialized MainApp with json_file: raw_data\drug-event-0001-of-0005.json
+2025-07-01 15:00:03,300 - INFO - ETL process starting...
+2025-07-01 15:00:03,300 - DEBUG - Starting ETL process...
+2025-07-01 15:00:04,568 - DEBUG - Successfully loaded data from raw_data\drug-event-0001-of-0005.json
+2025-07-01 15:00:04,588 - DEBUG - Extracted 12000 records from the 'results' key.
+2025-07-01 15:00:04,588 - DEBUG - Extracted 12000 records.
+2025-07-01 15:00:04,589 - DEBUG - Transformer initialized with records.
+2025-07-01 15:00:04,589 - DEBUG - Extracting report table.
+2025-07-01 15:00:04,592 - DEBUG - Flattening JSON with record_path=None and meta=None
+2025-07-01 15:00:10,945 - DEBUG - Dropping constant columns.
+2025-07-01 15:00:10,957 - DEBUG - Dropped 6 constant columns.
+2025-07-01 15:00:10,957 - DEBUG - Report table extracted with 12000 rows.
+2025-07-01 15:00:10,957 - DEBUG - Extracted report table with 12000 rows.
+2025-07-01 15:00:10,957 - DEBUG - Extracting patient table.
+2025-07-01 15:00:10,965 - DEBUG - Patient table extracted with 12000 records.
+2025-07-01 15:00:10,971 - DEBUG - Extracted patient table with 12000 rows.
+2025-07-01 15:00:10,971 - DEBUG - Extracting drug table.
+2025-07-01 15:00:10,971 - DEBUG - Flattening JSON with record_path=['patient', 'drug'] and meta=['safetyreportid']
+2025-07-01 15:00:18,027 - DEBUG - Drug table extracted with 53678 rows.
+2025-07-01 15:00:18,027 - DEBUG - Extracted drug table with 53678 rows.
+2025-07-01 15:00:18,027 - DEBUG - Extracting reaction table.
+2025-07-01 15:00:18,027 - DEBUG - Flattening JSON with record_path=['patient', 'reaction'] and meta=['safetyreportid']
+2025-07-01 15:00:18,125 - DEBUG - Reaction table extracted with 51743 rows.
+2025-07-01 15:00:18,125 - DEBUG - Extracted reaction table with 51743 rows.
+2025-07-01 15:00:18,125 - DEBUG - Data transformation completed.
+2025-07-01 15:00:18,134 - DEBUG - Successfully created SQLAlchemy engine for database: openfda_db
+2025-07-01 15:00:18,612 - DEBUG - Successfully wrote table 'report' with 12000 rows.
+2025-07-01 15:00:18,612 - DEBUG - Report table loaded into the database.
+2025-07-01 15:00:18,782 - DEBUG - Successfully wrote table 'patient' with 12000 rows.
+2025-07-01 15:00:18,782 - DEBUG - Patient table loaded into the database.
+2025-07-01 15:00:28,577 - DEBUG - Successfully wrote table 'drug' with 53678 rows.
+2025-07-01 15:00:28,578 - DEBUG - Drug table loaded into the database.
+2025-07-01 15:00:28,956 - DEBUG - Successfully wrote table 'reaction' with 51743 rows.
+2025-07-01 15:00:28,957 - DEBUG - Reaction table loaded into the database.
+2025-07-01 15:00:28,957 - DEBUG - ETL process completed successfully.
+2025-07-01 15:00:29,116 - INFO - ETL process completed successfully.
