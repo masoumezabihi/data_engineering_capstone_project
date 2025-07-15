@@ -38,16 +38,12 @@ To run the ETL pipeline and generate reports, the application needs to connect t
 
 #### Step 4: Run python script
 
-At Windows 10 Dos prompty, navigate to the work folder created at step 1, enter following command to run the python script
-python main_pipeline.py
+On Windows 10 Command Prompt, navigate to the work folder you created in Step 1.  
+Then run the following command to execute the pipeline script located in the `scripts` folder:
+     python scripts/main.py
+
 
 #### Note:
-1. The program needa some information to connectd to mysql database. So at the beginning  you will be asked 5 questions (if your answer is the same as the default value, you can hit enter to skip it):
-Please enter the databse username:
-Please enter the databse password:
-please enter the port(default=3306):
-Please enter the localhost(default="localhost"):
-Please enter the databse(default='ticket_system'):
 
 
 2. After 5 questions get answered,  the program will try to conenct to database. If it was not able to connect the database, it will display an error message and abort.    Otherwise, it will read the sales data from file  'third_party_sales_1.csv', format the data and load the formatted data into mysql table 'sales'. Then it will do some analysis and display the  result  'the top 2 most popular tickets', on the screen.
