@@ -1,6 +1,6 @@
 # Data Pipeline Mini Project
 
-In this project, a Python program reads sales data from a file named 'third_party_sales_1.csv', formats the data, and loads it into a MySQL database table called 'ticket_sales'. After that, it performs some analysis and displays the results on the screen.
+In this project, a Python program reads sales data from a file named **third_party_sales_1.csv**, formats the data, and loads it into a MySQL database table called **ticket_sales**. After that, it performs some analysis and displays the results on the screen.
 
 
 ### Prerequisites
@@ -34,7 +34,7 @@ To run the ETL pipeline and generate reports, the application needs to connect t
    ```sql
     CREATE DATABASE ticket_system;
 
-3. **Note**: You do not need to create any tables manually. The application will automatically create a table named ticket_sales when you run it.
+3. **Note**: You do not need to create any tables manually. The application will automatically create a table named **ticket_sales** when you run it.
 
 #### Step 4: Run python script
 
