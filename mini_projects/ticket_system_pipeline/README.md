@@ -19,9 +19,9 @@ https://github.com/masoumezabihi/data_engineering_capstone_project/tree/main/min
 
 
 #### Step 2. Install MySQL Python connector using pip
-Run following  pip command to install the pyhton module:
+mysql-connector-python is a MySQL database adapter in Python. It provides convenient APIs to load and query the tables. It also has a nice tool to load CSV files into the tables. In this step, we will need to install this Python module with following command:
 
-pip install mysql-connector-python
+pip3 install mysql-connector-python
 
 #### Step 3: Create database and table in mysql database
 
