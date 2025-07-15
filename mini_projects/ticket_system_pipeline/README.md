@@ -26,7 +26,7 @@ pip3 install mysql-connector-python
 #### Step 3: Setup database connection
 To run the ETL pipeline and generate reports, the application needs to connect to a MySQL database. Instead of hardcoding credentials, the application reads them from an environment file (.env) located in the root folder of this project.
 
-1. Create your own .env file in the project root, and include your MySQL connection details:
+1. **Create your own `.env` file** in the project root, and include your MySQL connection details:
 
 Example .env content:
   DB_USER=your_mysql_username
@@ -35,10 +35,11 @@ Example .env content:
   DB_NAME=ticket_system
   DB_PORT=3306
 
-2. Create the database using the following MySQL command (from terminal or a client like MySQL Workbench):
+2. **Create the database** using the following MySQL command (from terminal or a client like MySQL Workbench):
+   ```sql
     CREATE DATABASE ticket_system;
 
-3. Note: You do not need to create any tables manually. The application will automatically create a table named ticket_sales when you run it.
+3. **Note**: You do not need to create any tables manually. The application will automatically create a table named ticket_sales when you run it.
 
 #### Step 4: Run python script
 
