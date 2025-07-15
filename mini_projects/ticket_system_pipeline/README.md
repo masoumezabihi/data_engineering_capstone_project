@@ -42,9 +42,3 @@ On Windows 10 Command Prompt, navigate to the work folder you created in Step 1.
 Then run the following command to execute the pipeline script located in the `scripts` folder:
 
  python scripts/main.py
-
-
-#### Note:
-
-
-2. After 5 questions get answered,  the program will try to conenct to database. If it was not able to connect the database, it will display an error message and abort.    Otherwise, it will read the sales data from file  'third_party_sales_1.csv', format the data and load the formatted data into mysql table 'sales'. Then it will do some analysis and display the  result  'the top 2 most popular tickets', on the screen.
