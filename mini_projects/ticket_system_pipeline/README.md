@@ -14,8 +14,9 @@ In this project, a Python program reads sales data from a file named 'third_part
 
 
 #### Step 1. Download source code
-Create a work folder on your compulter and downlad files in following github folder to it
-https://github.com/huangc11/Springboard/tree/main/proj_15_data_pipelines 
+Create a work folder on your computer. Then download only the ticket_system_pipeline folder from the repository at:
+[https://github.com/huangc11/Springboard/tree/main/proj_15_data_pipelines ](https://github.com/huangc11/Springboard/tree/main/proj_15_data_pipelines/ticket_system_pipeline
+)
 
 #### Step 2. Install MySQL Python connector using pip
 Run following  pip command to install the pyhton module:
