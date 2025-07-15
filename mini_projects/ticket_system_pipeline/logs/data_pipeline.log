@@ -1,13 +1,13 @@
-2025-07-15 07:47:37,455 - INFO - ETL pipeline started.
-2025-07-15 07:47:37,692 - INFO - Successfully connected to the database.
-2025-07-15 07:47:37,694 - INFO - Table 'ticket_sales' created or already exists.
-2025-07-15 07:47:37,694 - INFO - Extracted 6 rows from C:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\mini projects\ticket_system_pipeline\data\third_party_sales_1.csv
-2025-07-15 07:47:37,694 - INFO - Starting data load into ticket_sales table.
-2025-07-15 07:47:37,697 - INFO - Loaded 6 rows into ticket_sales.
-2025-07-15 07:47:37,697 - INFO - Data successfully loaded into the database.
-2025-07-15 07:47:37,697 - INFO - ETL process completed.
-2025-07-15 07:47:37,698 - INFO - Report generated successfully:
+2025-07-15 08:29:50,795 - INFO - ETL pipeline started.
+2025-07-15 08:29:51,006 - INFO - Successfully connected to the database.
+2025-07-15 08:29:51,047 - INFO - Table 'ticket_sales' created or already exists.
+2025-07-15 08:29:51,048 - INFO - Extracted 6 rows from C:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\data_engineering_capstone_project\mini_projects\ticket_system_pipeline\data\third_party_sales_1.csv
+2025-07-15 08:29:51,048 - INFO - Starting data load into ticket_sales table.
+2025-07-15 08:29:51,055 - INFO - Loaded 6 rows into ticket_sales.
+2025-07-15 08:29:51,055 - INFO - Data successfully loaded into the database.
+2025-07-15 08:29:51,056 - INFO - ETL process completed.
+2025-07-15 08:29:51,057 - INFO - Report generated successfully:
 Here are the most popular tickets in the past month:
 - Washington Spirits vs Sky Blue FC
-2025-07-15 07:47:37,699 - INFO - Database connection closed.
-2025-07-15 07:47:37,699 - INFO - ETL pipeline finished.
+2025-07-15 08:29:51,057 - INFO - Database connection closed.
+2025-07-15 08:29:51,057 - INFO - ETL pipeline finished.
