@@ -23,20 +23,22 @@ mysql-connector-python is a MySQL database adapter in Python. It provides conven
 
 pip3 install mysql-connector-python
 
-#### Step 3: Create database and table in mysql database
+#### Step 3: Setup database connection
+To run the ETL pipeline and generate reports, the application needs to connect to a MySQL database. Instead of hardcoding credentials, the application reads them from an environment file (.env) located in the root folder of this project.
 
- 1) At dos prompt,  launch mysql shell to connect to mysql server using following command (assume you have set up a credential,  'dbuser1' as username and a password):
- 
-     mysql -u dbuser1 -p
- 
- 2) After  connecting to mysql serer, run follow command to create database if it is not existing:
- 
-  create database ticket_system
-  
- 3) Type command 'use ticket_system' to connect to the database.
- 
- 4) Run the DDL statement in  of one of the downloaded file, 'cr_table_sales.sql',  to create table 'sales'
- 
+1. Create your own .env file in the project root, and include your MySQL connection details:
+
+Example .env content:
+  DB_USER=your_mysql_username
+  DB_PASSWORD=your_mysql_password
+  DB_HOST=127.0.0.1
+  DB_NAME=ticket_system
+  DB_PORT=3306
+
+2. Create the database using the following MySQL command (from terminal or a client like MySQL Workbench):
+    CREATE DATABASE ticket_system;
+
+3. Note: You do not need to create any tables manually. The application will automatically create a table named ticket_sales when you run it.
 
 #### Step 4: Run python script
 
