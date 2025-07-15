@@ -18,7 +18,7 @@ Create a work folder on your computer. Then download only the ticket_system_pipe
 https://github.com/masoumezabihi/data_engineering_capstone_project/tree/main/mini_projects/ticket_system_pipeline
 
 
-#### Step 2. Install MySQL Python connector using pip
+#### Step 2. Install MySQL Python connector
 mysql-connector-python is a MySQL database adapter in Python. It provides convenient APIs to load and query the tables. It also has a nice tool to load CSV files into the tables. In this step, we will need to install this Python module with following command:
 
 pip3 install mysql-connector-python
