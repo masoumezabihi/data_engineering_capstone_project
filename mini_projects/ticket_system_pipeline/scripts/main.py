@@ -26,17 +26,14 @@ Logger.setup_logger('logs', 'data_pipeline.log')
 Logger.log("ETL pipeline started.", 'info')
 
 try:
-    # Initialize and connect to database
     db_handler = DatabaseHandler(config)
     db_handler.connect()
     db_handler.create_third_party_table()
 
-    # Run ETL
     loader = Loader(db_handler)
     etl = ETLProcessor(Extractor(), loader)
     etl.run(BASE_DIR.parent / 'data' / 'third_party_sales_1.csv')
 
-    # Generate report
     try:
         report = ReportGenerator(db_handler.get_connection())
         popular_tickets = report.query_popular_tickets()
