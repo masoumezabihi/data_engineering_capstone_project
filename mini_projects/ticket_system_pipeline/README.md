@@ -40,7 +40,8 @@ To run the ETL pipeline and generate reports, the application needs to connect t
 
 On Windows 10 Command Prompt, navigate to the work folder you created in Step 1.  
 Then run the following command to execute the pipeline script located in the `scripts` folder:
-     python scripts/main.py
+
+ python scripts/main.py
 
 
 #### Note:
