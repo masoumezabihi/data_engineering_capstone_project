@@ -28,12 +28,7 @@ To run the ETL pipeline and generate reports, the application needs to connect t
 
 1. **Create your own `.env` file** in the project root, and include your MySQL connection details:
 
-Example .env content:
-  DB_USER=your_mysql_username
-  DB_PASSWORD=your_mysql_password
-  DB_HOST=127.0.0.1
-  DB_NAME=ticket_system
-  DB_PORT=3306
+<pre> 1. **Create your own `.env` file** in the project root, and add your MySQL credentials like this: ``` DB_USER=your_mysql_username DB_PASSWORD=your_mysql_password DB_HOST=127.0.0.1 DB_NAME=ticket_system DB_PORT=3306 ``` </pre>
 
 2. **Create the database** using the following MySQL command (from terminal or a client like MySQL Workbench):
    ```sql
