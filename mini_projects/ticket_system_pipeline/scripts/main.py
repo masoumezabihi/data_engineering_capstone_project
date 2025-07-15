@@ -5,15 +5,24 @@ from Extractor import Extractor
 from pathlib import Path
 from ReportGenerator import ReportGenerator
 from Logger import Logger
+from dotenv import load_dotenv
+import os
+from pathlib import Path
 
-# Setup paths and config
+# Go one level up to reach project root where .env is
+env_path = Path(__file__).resolve().parent.parent / '.env'
+load_dotenv(dotenv_path=env_path)
+
+# Now load your config safely
 config = {
-    'user': 'massi_user',
-    'password': 'Masoume_1367',
-    'host': '127.0.0.1',
-    'database': 'ticket_system',
-    'port': 3306
+    'user': os.getenv('DB_USER'),
+    'password': os.getenv('DB_PASSWORD'),
+    'host': os.getenv('DB_HOST'),
+    'database': os.getenv('DB_NAME'),
+    'port': int(os.getenv('DB_PORT'))
 }
+
+
 BASE_DIR = Path(__file__).resolve().parent
 Logger.setup_logger('logs', 'data_pipeline.log') 
 Logger.log("ETL pipeline started.", 'info')
