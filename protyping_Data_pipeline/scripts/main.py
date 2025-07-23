@@ -2,6 +2,8 @@ import os
 import logging
 from ETLProcessor import ETLProcessor  
 from Logger import Logger  
+import os
+from dotenv import load_dotenv
 
 class MainApp:
     def __init__(self, json_file, username, password, host, port, database):
@@ -32,12 +34,15 @@ class MainApp:
 
 # Entry point for the application
 if __name__ == "__main__":
-    app = MainApp(
-        json_file="drug-event-0001-of-0005.json", 
-        username="postgres", 
-        password="Masoume1367", 
-        host="localhost", 
-        port=5432, 
-        database="openfda_db"
-    )
-    app.run()
+    load_dotenv()
+
+    if __name__ == "__main__":
+        app = MainApp(
+            json_file=os.getenv("JSON_FILE"),
+            username=os.getenv("POSTGRES_USER"),
+            password=os.getenv("POSTGRES_PASSWORD"),
+            host=os.getenv("POSTGRES_HOST"),
+            port=int(os.getenv("POSTGRES_PORT")),
+            database=os.getenv("POSTGRES_DB")
+        )
+        app.run()
