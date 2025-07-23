@@ -9,11 +9,9 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 
-# Go one level up to reach project root where .env is
 env_path = Path(__file__).resolve().parent.parent / '.env'
 load_dotenv(dotenv_path=env_path)
 
-# Now load your config safely
 config = {
     'user': os.getenv('DB_USER'),
     'password': os.getenv('DB_PASSWORD'),
