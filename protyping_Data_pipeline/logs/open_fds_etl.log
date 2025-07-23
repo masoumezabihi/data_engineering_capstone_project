@@ -1,0 +1,6 @@
+2025-07-23 13:06:18,413 - INFO - Initialized MainApp with json_file: raw_data\drug-event-0001-of-0005.json
+2025-07-23 13:06:18,413 - INFO - ETL process starting...
+2025-07-23 13:06:18,413 - DEBUG - Starting ETL process...
+2025-07-23 13:06:18,413 - DEBUG - Error: File not found: raw_data\drug-event-0001-of-0005.json
+2025-07-23 13:06:18,413 - DEBUG - Failed to load data. ETL process aborted.
+2025-07-23 13:06:18,413 - INFO - ETL process completed successfully.
