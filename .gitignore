@@ -1,3 +1,4 @@
 # Ignore environment files
 mini_projects/ticket_system_pipeline/.env
 protyping_Data_pipeline/.env
+Guided_Capstone_Project_Equity_Market_Data_Analysis/step2/.env
