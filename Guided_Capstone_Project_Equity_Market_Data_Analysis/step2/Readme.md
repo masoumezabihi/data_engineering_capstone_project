@@ -20,7 +20,7 @@ Before running the project, ensure you have:
 - **AzCopy** installed for uploading data.
 - **Apache Spark** environment (local or cluster).
 
-## 🔧 Environment Variables (`.env` file)
+## Environment Variables (`.env` file)
 Create a `.env` file in your project root to store your Azure Storage credentials securely.  
 The file should have the following format (replace the values with your own credentials):
 
