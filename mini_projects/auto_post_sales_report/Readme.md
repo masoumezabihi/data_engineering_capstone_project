@@ -31,6 +31,6 @@ Make sure the following are available:
 - Python script and shell script are inside the VM at: VM root directory (/root)
 
 ## How to Run
-1. Use the terminal inside VirtualBox located in http://localhost:4200/ as root user
+1. Use the terminal inside VirtualBox located in http://localhost:4200/ and log in as root user
 2. Make sure you’re in the directory where both scripts are stored:
 3. Run the shell script: bash run_autoinc.sh (This will execute the Spark job in local mode using:  spark-submit --master local /root/autoinc_spark.py > output.log 2>&1 and ttach the command line execution log for the successful and failed job run.)
