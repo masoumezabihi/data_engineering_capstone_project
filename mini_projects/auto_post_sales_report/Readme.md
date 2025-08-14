@@ -22,8 +22,8 @@ Make sure the following are available:
 
 - Hortonworks Sandbox is running in VirtualBox
 - Terminal access to the VM via http://localhost:4200/
-- Input file is located in HDFS at: /user/root/spark_mini_project1/input/data.csv
-- Python script and shell script are inside the VM at: VM root directory (/root)
+- Input file should be located in HDFS at: /user/root/spark_mini_project1/input/data.csv
+- Python script and shell script should be inside VM root directory (/root)
 
 ## How to Run
 1. Use the terminal inside VirtualBox located in http://localhost:4200/ and sign in as root user
