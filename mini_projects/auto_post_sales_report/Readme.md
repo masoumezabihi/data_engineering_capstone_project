@@ -2,16 +2,11 @@
 
 This project processes automobile incident data using Apache Spark. It extracts vehicle make and year from initial sales records, propagates them to related records, and produces a report counting incidents grouped by make and year.
 
-
----
-
 ## Project Structure
 
 - `autoinc_spark.py` – Main PySpark script to process data
 - `run_autoinc.sh` – Shell script to run the PySpark job and capture log
 - `data.csv` - CSV data input file
-  
----
 
 ## Environment & Setup
 
