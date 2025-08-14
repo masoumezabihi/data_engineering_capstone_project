@@ -27,3 +27,7 @@ Make sure the following are available:
 
 ## How to Run stored:
 Run the shell script: bash run_autoinc.sh (This will execute the Spark job in local mode using:  spark-submit --master local /root/autoinc_spark.py > output.log 2>&1 and attach the command line execution log for the successful and failed job run.)
+
+## Output:
+The report file is saved as a text file in HDFS at the following path:
+/user/root/spark_mini_project1/output/automobile_post_sales_report
