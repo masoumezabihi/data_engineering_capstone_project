@@ -1,7 +1,7 @@
 
 from pyspark import SparkContext
 
-sc = SparkContext(appName="MakeYearCount")
+sc = SparkContext(master="local",appName="MakeYearCount")  
 
 raw_rdd = sc.textFile("/user/root/spark_mini_project1/input/data.csv")
 
