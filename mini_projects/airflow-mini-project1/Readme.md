@@ -21,7 +21,7 @@ docker exec -it airflow-webserver airflow users create \
 ```
   Replace the values as needed. Once created, log in using the credentials at the URL above.
 
->  3. Enable and Trigger the DAG
+> ### 3. Enable and Trigger the DAG
  - Find the DAG named marketvol in DAGS
  - Toggle it on
  - Click the ▶️ Trigger DAG button to run it manually
