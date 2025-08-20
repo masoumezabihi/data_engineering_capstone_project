@@ -38,5 +38,5 @@ This DAG is scheduled to run Monday–Friday at 18:00 UTC.
 ## Dependencies
 This DAG uses:
   - yfinance
-  - pandas
+  - pandas<br>
 Make sure these are installed inside your Airflow environment.
