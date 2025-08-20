@@ -1,0 +1,20 @@
+[2025-08-20T21:54:37.077+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-20T21:54:37.088+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketvol.download_market_data_tsla manual__2025-08-20T21:54:33.581198+00:00 [queued]>
+[2025-08-20T21:54:37.093+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketvol.download_market_data_tsla manual__2025-08-20T21:54:33.581198+00:00 [queued]>
+[2025-08-20T21:54:37.094+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-08-20T21:54:37.103+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): download_market_data_tsla> on 2025-08-20 21:54:33.581198+00:00
+[2025-08-20T21:54:37.107+0000] {standard_task_runner.py:63} INFO - Started process 9089 to run task
+[2025-08-20T21:54:37.110+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'marketvol', 'download_market_data_tsla', 'manual__2025-08-20T21:54:33.581198+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/dag_marketvol.py', '--cfg-path', '/tmp/tmpmkr9uicf']
+[2025-08-20T21:54:37.111+0000] {standard_task_runner.py:91} INFO - Job 59: Subtask download_market_data_tsla
+[2025-08-20T21:54:37.156+0000] {task_command.py:426} INFO - Running <TaskInstance: marketvol.download_market_data_tsla manual__2025-08-20T21:54:33.581198+00:00 [running]> on host 86e599c7130c
+[2025-08-20T21:54:37.207+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='dataengineer' AIRFLOW_CTX_DAG_ID='marketvol' AIRFLOW_CTX_TASK_ID='download_market_data_tsla' AIRFLOW_CTX_EXECUTION_DATE='2025-08-20T21:54:33.581198+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-20T21:54:33.581198+00:00'
+[2025-08-20T21:54:37.209+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-20T21:54:37.214+0000] {warnings.py:109} WARNING - /opt/***/dags/dag_marketvol.py:14: FutureWarning: YF.download() has changed argument auto_adjust default to True
+  stock_df = yf.download(stock_symbol, start=start_date, end=end_date, interval='1m')
+
+[2025-08-20T21:54:37.685+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2025-08-20T21:54:37.694+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-08-20T21:54:37.694+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-20T21:54:37.700+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=marketvol, task_id=download_market_data_tsla, run_id=manual__2025-08-20T21:54:33.581198+00:00, execution_date=20250820T215433, start_date=20250820T215437, end_date=20250820T215437
+[2025-08-20T21:54:37.724+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-20T21:54:37.730+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

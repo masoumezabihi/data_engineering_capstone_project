@@ -1,0 +1,19 @@
+[2025-08-20T21:54:40.839+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-20T21:54:40.850+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: marketvol.run_query manual__2025-08-20T21:54:33.581198+00:00 [queued]>
+[2025-08-20T21:54:40.855+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: marketvol.run_query manual__2025-08-20T21:54:33.581198+00:00 [queued]>
+[2025-08-20T21:54:40.856+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-08-20T21:54:40.864+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): run_query> on 2025-08-20 21:54:33.581198+00:00
+[2025-08-20T21:54:40.868+0000] {standard_task_runner.py:63} INFO - Started process 9106 to run task
+[2025-08-20T21:54:40.870+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'marketvol', 'run_query', 'manual__2025-08-20T21:54:33.581198+00:00', '--job-id', '62', '--raw', '--subdir', 'DAGS_FOLDER/dag_marketvol.py', '--cfg-path', '/tmp/tmpoispp41w']
+[2025-08-20T21:54:40.871+0000] {standard_task_runner.py:91} INFO - Job 62: Subtask run_query
+[2025-08-20T21:54:40.916+0000] {task_command.py:426} INFO - Running <TaskInstance: marketvol.run_query manual__2025-08-20T21:54:33.581198+00:00 [running]> on host 86e599c7130c
+[2025-08-20T21:54:40.963+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='dataengineer' AIRFLOW_CTX_DAG_ID='marketvol' AIRFLOW_CTX_TASK_ID='run_query' AIRFLOW_CTX_EXECUTION_DATE='2025-08-20T21:54:33.581198+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-20T21:54:33.581198+00:00'
+[2025-08-20T21:54:40.964+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-20T21:54:40.971+0000] {logging_mixin.py:188} INFO - AAPL Max Close: 229.97000122070312
+[2025-08-20T21:54:40.971+0000] {logging_mixin.py:188} INFO - TSLA Max Close: 330.8699951171875
+[2025-08-20T21:54:40.972+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-08-20T21:54:40.973+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-20T21:54:40.978+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=marketvol, task_id=run_query, run_id=manual__2025-08-20T21:54:33.581198+00:00, execution_date=20250820T215433, start_date=20250820T215440, end_date=20250820T215440
+[2025-08-20T21:54:41.003+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-20T21:54:41.014+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-20T21:54:41.018+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
