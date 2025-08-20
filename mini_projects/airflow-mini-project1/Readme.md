@@ -21,7 +21,7 @@ docker exec -it <webserver-container-name> airflow users create \
 ```
   🔁 Note: The container name may differ depending on your setup. You can find the correct container name by running:
     ```
-       docker ps
+           docker ps
     ```
 
 > ### 3. Enable and Trigger the DAG
