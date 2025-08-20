@@ -11,7 +11,7 @@ This DAG downloads 1-minute stock data for **AAPL** and **TSLA** from Yahoo Fina
   If no users exist yet, you can create an admin user or any other user (e.g., airflow) using the following command inside the    Airflow webserver container: 
      
 ```
-docker exec -it airflow-webserver airflow users create \
+docker exec -it "your web-server container name" airflow users create \
   --username airflow \
   --firstname Firstname \
   --lastname Lastname \
