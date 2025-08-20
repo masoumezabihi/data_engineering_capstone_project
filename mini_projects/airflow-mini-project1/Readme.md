@@ -11,7 +11,7 @@ This DAG downloads 1-minute stock data for **AAPL** and **TSLA** from Yahoo Fina
   If no users exist yet, you can create an admin user or any other user (e.g., airflow) using the following command inside the    Airflow webserver container: 
      
 ```
-docker exec -it "your web-server container name" airflow users create \
+docker exec -it <webserver-container-name> airflow users create \
   --username airflow \
   --firstname Firstname \
   --lastname Lastname \
@@ -19,7 +19,8 @@ docker exec -it "your web-server container name" airflow users create \
   --email airflow@example.com \
   --password airflow
 ```
-  Replace the values as needed. Once created, log in using the credentials at the URL above.
+  Replace the values as needed. You can find your container name by running: <br> docker ps
+  Once created, log in using the credentials at the URL above.
 
 > ### 3. Enable and Trigger the DAG
  - Find the DAG named marketvol in DAGS
