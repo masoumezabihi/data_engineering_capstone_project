@@ -19,8 +19,10 @@ docker exec -it <webserver-container-name> airflow users create \
   --email airflow@example.com \
   --password airflow
 ```
-  Replace the values as needed. You can find your container name by running: <br> docker ps
-  Once created, log in using the credentials at the URL above.
+  🔁 Note: The container name may differ depending on your setup. You can find the correct container name by running:
+    ```
+    docker ps
+    ```
 
 > ### 3. Enable and Trigger the DAG
  - Find the DAG named marketvol in DAGS
