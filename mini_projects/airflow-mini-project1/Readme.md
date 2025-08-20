@@ -19,7 +19,8 @@ docker exec -it <webserver-container-name> airflow users create \
   --email airflow@example.com \
   --password airflow
 ```
-  🔁 Note: The container name may differ depending on your setup. You can find the correct container name by running:
+  > [!NOTE]
+>  The container name may differ depending on your setup. You can find the correct container name by running:
    >>docker ps
     
 
