@@ -4,7 +4,7 @@ This DAG downloads 1-minute stock data for **AAPL** and **TSLA** from Yahoo Fina
 
 ## How to Run
 
-### 1. Copy the DAG
+> ### 1. Copy the DAG
 Place the DAG file `dag_marketvol.py` into your Airflow 'dags/' folder. If you're using Docker, you can copy the file in ('/opt/airflow/dags/')   
 
 ### 2. Access the Airflow Web UI
@@ -31,7 +31,7 @@ The stock data is saved and moved to: /tmp/data/<execution_date>/<br>
 Each CSV file is named:
   - data_AAPL.csv
   - data_TSLA.csv
-  - 
+
 ## DAG Schedule
 This DAG is scheduled to run Monday–Friday at 18:00 UTC.
 
