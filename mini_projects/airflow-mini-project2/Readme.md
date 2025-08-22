@@ -18,11 +18,13 @@ Run the script with:
 - <path_to_logs> is the folder containing your DAG logs.
 - The script prints the total number of errors.
 - It also lists the error messages found in the logs.
+```
 
+---
 ## Sample Output
 These images illustrate the script’s output for two cases: logs with errors and logs without errors.
 
-## Notes
+---
 
 > [!NOTE]  
 > - This script is **path-agnostic** — you don’t need to hardcode paths.  
