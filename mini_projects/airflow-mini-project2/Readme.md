@@ -12,7 +12,8 @@ This Python script analyzes Airflow DAG logs and reports all errors.
 ---
 
 ## Usage
-Run the script with:  __python log_analyzer.py <path_to_logs>__
+Run the script with:  __python <script_name> <path_to_logs>__
+- <script_name> is the Python file (e.g., log_analyzer.py).
 - <path_to_logs> is the folder containing your DAG logs.
 
 ---
