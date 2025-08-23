@@ -25,5 +25,11 @@ The goal was to:
 4. Run the Databricks Job, pointing to the OpenFDA dataset in Blob Storage.
 5. Output is written as Parquet files back to Azure Blob Storage.
 
-## Screenshots
-Screenshots of the Databricks job run, cluster and Blob Storage output are included in the images/ folder.
+## Results & Observations
+
+The ETL pipeline successfully processed the full dataset in Azure Databricks.
+Output Parquet files were generated in the Blob Storage container.
+Performance improvements were expected with a multi-node cluster, but:
+Note: Since this project used a free (non–Pay-As-You-Go) Azure account, only a single-node Databricks cluster was available.
+As a result, performance gains from distributed execution could not be fully demonstrated.
+
