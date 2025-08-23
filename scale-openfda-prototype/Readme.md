@@ -27,9 +27,11 @@ The goal was to:
 
 ## Results & Observations
 
-The ETL pipeline successfully processed the full dataset in Azure Databricks.
-Output Parquet files were generated in the Blob Storage container.
-Performance improvements were expected with a multi-node cluster, but:
-Note: Since this project used a free (non–Pay-As-You-Go) Azure account, only a single-node Databricks cluster was available.
-As a result, performance gains from distributed execution could not be fully demonstrated.
+- The PySpark ETL pipeline successfully processed the datasets both locally (3GB) and in Azure Databricks (50GB).
+Output Parquet files were generated in Azure Blob Storage as expected.
+
+[!Note] Performance comparison note:
+- The datasets used for local testing (3GB) and cloud execution (50GB) are different, so a direct comparison is not meaningful.
+- Additionally, due to using a single-node Databricks cluster (free-tier account), the benefits of Spark’s distributed processing could not be fully observed.
+- Despite this, the pipeline demonstrates scalability and is ready to leverage multi-node clusters for larger datasets in       production environments.
 
