@@ -8,7 +8,7 @@ The goal was to:
 - Store input data in Azure Blob Storage and save processed data as Parquet.
 - Compare performance improvements with the earlier prototype.
 
-  ## Spark cluster Configuration for Azure Blob Storage
+## Spark cluster Configuration for Azure Blob Storage
   For this project, I configured the Azure Storage credentials directly in
   the Databricks Cluster UI → Spark Config by setting environment variables and Hadoop configurations
    (e.g., AZURE_STORAGE_ACCOUNT, AZURE_CONTAINER, and spark.hadoop.fs.azure.account.key.<account>.blob.core.windows.net).
