@@ -31,7 +31,8 @@ The goal was to:
 Output Parquet files were generated in Azure Blob Storage as expected.
 
 > [!NOTE] 
-> The datasets used for local testing (3GB) and cloud execution (50GB) are different, so a direct comparison is not meaningful.
-> Additionally, due to using a single-node Databricks cluster (free-tier account), the benefits of Spark’s distributed processing could not be fully observed.
-> Despite this, the pipeline demonstrates scalability and is ready to leverage multi-node clusters for larger datasets in       production environments.
+> - The datasets used for local testing (3GB) and cloud execution (50GB) are different, so a direct comparison is not meaningful.
+> - Additionally, due to using a single-node Databricks cluster (free-tier account), the benefits of Spark’s distributed processing could not be fully observed.
+> - Despite this, the pipeline demonstrates scalability and is ready to leverage multi-node clusters for larger datasets in production environments.
+
 
