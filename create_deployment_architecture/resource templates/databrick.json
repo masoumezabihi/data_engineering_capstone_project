@@ -1,0 +1,53 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspaces_openfda_etl_ws_name": {
+            "defaultValue": "openfda-etl-ws",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Databricks/workspaces",
+            "apiVersion": "2025-03-01-preview",
+            "name": "[parameters('workspaces_openfda_etl_ws_name')]",
+            "location": "centralus",
+            "sku": {
+                "name": "trial"
+            },
+            "properties": {
+                "defaultCatalog": {
+                    "initialType": "UnityCatalog"
+                },
+                "managedResourceGroupId": "[concat('/subscriptions/edea9dca-ba68-4b01-8fec-aeafb7552ad0/resourceGroups/databricks-rg-', parameters('workspaces_openfda_etl_ws_name'), '-gj3yng4xyxnkw')]",
+                "parameters": {
+                    "enableNoPublicIp": {
+                        "value": true
+                    },
+                    "prepareEncryption": {
+                        "value": false
+                    },
+                    "requireInfrastructureEncryption": {
+                        "value": false
+                    },
+                    "storageAccountName": {
+                        "value": "dbstoragegamkrozdxalj6"
+                    },
+                    "storageAccountSkuName": {
+                        "value": "Standard_GRS"
+                    }
+                },
+                "authorizations": [
+                    {
+                        "principalId": "9a74af6f-d153-4348-988a-e2672920bee9",
+                        "roleDefinitionId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
+                    }
+                ],
+                "createdBy": {},
+                "updatedBy": {}
+            }
+        }
+    ]
+}
