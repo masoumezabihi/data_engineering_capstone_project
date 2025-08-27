@@ -53,10 +53,9 @@ Key business goals include:
 
 ---
 
-## 🛠️ Technical Requirements
+## Technical Requirements
 
 - Use **Apache Spark** for scalable data processing
-- Use **Azure Elastic Cloud Service** for cluster compute and blob storage
 - Ingest data continuously and pre-process as it arrives throughout the trading day
 - Maintain source data partitioned by date for efficient querying
 - Correct duplicate or updated records by unique identifier
@@ -64,7 +63,7 @@ Key business goals include:
 
 ---
 
-## 🔧 Project Steps
+## Project Steps
 
 ### Step 1: Database Table Design
 
@@ -99,10 +98,10 @@ For each quote event, calculate:
 
 ---
 
-## ☁️ Azure Storage Setup
+## Azure Storage Setup
 
 - Data is stored and read from **Azure Blob Storage** containers
-- Credentials and container info configured securely
+- Credentials and container info  set in env file.
 - Update the `StorageConfig` with your Azure storage account details
 
 ---
@@ -129,11 +128,11 @@ Important: Do not commit this file or your credentials to any public repository.
 
 ## Running the Pipeline 
 ### Run Data Ingestion
-bash
+```bash
 ./run_ingestion.sh 
 This script ingests raw trade and quote files from Azure Blob Storage, validates them, and stores pre-processed data.
 
 ### Run ETL Analytical 
-bash
-./run_etl.sh 
+```bash
+./run_etl.sh
 This script ingests raw trade and quote files from Azure Blob Storage, validates them, and stores pre-processed data.
