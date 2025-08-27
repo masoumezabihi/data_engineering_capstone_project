@@ -123,8 +123,7 @@ DB_PORT=5432
 
 JOB_TRACKER_TABLE=<table name>
 ```
-
-Important: Do not commit this file or your credentials to any public repository.
+> **Note**: Important: Do not commit this file or your credentials to any public repository.
 
 ## Running the Pipeline 
 #### Run Data Ingestion
