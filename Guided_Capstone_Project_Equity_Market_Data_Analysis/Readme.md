@@ -101,9 +101,7 @@ For each quote event, calculate:
 ## Azure Storage Setup
 
 - Data is stored and read from **Azure Blob Storage** containers
-- Credentials and container info  set in env file.
-- Update the `StorageConfig` with your Azure storage account details
-
+- Storage account and container info is stored in env file.
 ---
 
 ## Environment Setup
