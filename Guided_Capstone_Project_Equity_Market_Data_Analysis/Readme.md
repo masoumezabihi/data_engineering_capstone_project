@@ -127,13 +127,13 @@ JOB_TRACKER_TABLE=<table name>
 Important: Do not commit this file or your credentials to any public repository.
 
 ## Running the Pipeline 
-### Run Data Ingestion
+#### Run Data Ingestion
 ```bash
 ./run_ingestion.sh
 ```
 This script ingests raw trade and quote files from Azure Blob Storage, validates them, and stores pre-processed data.
 
-### Run ETL Analytical 
+#### Run ETL Analytical 
 ```bash
 ./run_etl.sh
 ```
