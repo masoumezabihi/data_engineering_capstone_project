@@ -53,10 +53,11 @@ pytest --cov=etl --cov-report=term-missing -v tests/
 
 ## Test Results
 
-### In the first step
+###Pre-Fix Execution Result
 ![First Test Results](images/UnitTestResultAfterFixing.gif)
 
-### After fixing issues
-![Final Test Results](images/after-tests.png)
+### Post-Fix Execution Result
+![Final Test Results](images/UnitTestResultAfterFixing.gif)
 
 ### Code coverage
+![Final Test Results](images/test_coverage.gif)
