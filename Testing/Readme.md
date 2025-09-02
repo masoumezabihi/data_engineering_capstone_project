@@ -28,7 +28,6 @@ This involves:
 - ETL code modules located in `etl/`  
 - Unit tests located in `tests/`  
 - Azure Blob Storage read/write operations are mocked to simulate cloud interaction during unit testing. 
-- Logger utility in `etl/logger.py`  
 - PySpark used for data processing and handling JSON/parquet I/O
 
 ---
