@@ -54,7 +54,7 @@ pytest --cov=etl --cov-report=term-missing -v tests/
 ## Test Results
 
 ### In the first step
-![First Test Results](images/after-tests.png)
+![First Test Results](images/UnitTestResultAfterFixing.gif)
 
 ### After fixing issues
 ![Final Test Results](images/after-tests.png)
