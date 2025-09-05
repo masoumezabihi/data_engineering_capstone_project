@@ -69,7 +69,9 @@ docker-compose -f docker-compose.kafka.yml exec broker \
   - ![legitimate transctions](images/kafka-setup.gif)
   - ![legitimate transctions](images/kafkasetup-docker-desktop.gif)
 - Generator
-- ![legitimate transctions](images/generator.gif)
+  - ![legitimate transctions](images/generator.gif)
 - Fraud detection results (legit and fraud)
-- ![legitimate transctions](images/fraud.gif)
-- ![suspicious transctions](images/legit.gif)
+  - transactions:
+    - ![legitimate transctions](images/fraud.gif)
+  - suspicious transactions:
+    - ![suspicious transctions](images/legit.gif)
