@@ -15,17 +15,7 @@ Fraud detection is a critical use case in financial systems. In this project:
 - Docker & Docker Compose
 ## Project Structure
 .
-├── docker-compose.yml
-├── docker-compose.kafka.yml
-├── detector/
-│   ├── app.py
-│   ├── Dockerfile
-│   └── requirements.txt
-└── generator/
-    ├── app.py
-    ├── transactions.py
-    ├── Dockerfile
-    └── requirements.txt
+<pre> ```bash . ├── docker-compose.yml ├── docker-compose.kafka.yml ├── detector │ ├── app.py │ ├── Dockerfile │ └── requirements.txt └── generator ├── app.py ├── transactions.py ├── Dockerfile └── requirements.txt ``` </pre>
 
 ## Setup Instructions
 ### Start Kafka Cluster
