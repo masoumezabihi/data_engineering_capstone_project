@@ -16,19 +16,17 @@ Fraud detection is a critical use case in financial systems. In this project:
 ## Project Structure
 
 <pre>
-  ```bash  
   ├── docker-compose.yml
-├── docker-compose.kafka.yml
-├── detector
-│   ├── app.py
-│   ├── Dockerfile
-│   └── requirements.txt
-└── generator
-    ├── app.py
-    ├── transactions.py
-    ├── Dockerfile
-    └── requirements.txt
-``` 
+  ├── docker-compose.kafka.yml
+  ├── detector
+  │   ├── app.py
+  │   ├── Dockerfile
+  │   └── requirements.txt
+  └── generator
+      ├── app.py
+      ├── transactions.py
+      ├── Dockerfile
+      └── requirements.txt
 </pre>
 
 ## Setup Instructions
