@@ -52,16 +52,21 @@ This will spin up:
 
 ## Testing
 To verify the streams, open a new terminal and run:
+- start both the transaction generator and the fraud detector:
 ````bash
-docker-compose -f docker-compose.kafka.yml exec broker \
-  kafka-console-consumer --bootstrap-server localhost:9092 \
-  --topic streaming.transactions.legit --from-beginning
+docker-compose up
 ````
-Check fraud transactions:
+````bash
+- Check legitimate transactions:
+docker-compose -f docker-compose.kafka.yml exec broker \
+  kafka-console-consumer --bootstrap-server localhost:9092 \
+  --topic streaming.transactions.legit 
+````
+- Check suspicious transactions:
 ````bash
 docker-compose -f docker-compose.kafka.yml exec broker \
   kafka-console-consumer --bootstrap-server localhost:9092 \
-  --topic streaming.transactions.fraud --from-beginning
+  --topic streaming.transactions.fraud 
 ````
 
 ## Screenshots
