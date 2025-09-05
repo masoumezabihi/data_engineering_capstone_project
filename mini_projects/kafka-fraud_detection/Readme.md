@@ -56,8 +56,8 @@ To verify the streams, open a new terminal and run:
 ````bash
 docker-compose up
 ````
-````bash
 - Check legitimate transactions:
+````bash
 docker-compose -f docker-compose.kafka.yml exec broker \
   kafka-console-consumer --bootstrap-server localhost:9092 \
   --topic streaming.transactions.legit 
