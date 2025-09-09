@@ -65,7 +65,7 @@ The pipeline reads raw JSON data from Azure Blob Storage, performs data transfor
 2. Click **Edit > Advanced Options > Spark**
 3. Under **Spark Config**, add the following entry (replace with your actual storage account name and key):
 spark.hadoop.fs.azure.account.key.<your-storage-account>.blob.core.windows.net <your-storage-access-key>>
- > ##### 🌍 b. Set Environment Variables for Storage
+ > ##### b. Set Environment Variables for Storage
 Under the same **Advanced Options**, scroll to the **Environment Variables** section and set the following:
 AZURE_STORAGE_ACCOUNT=<your-storage-account>
 AZURE_CONTAINER=<your-blob-container>
@@ -76,5 +76,6 @@ import os
 
 storage_account = os.getenv("AZURE_STORAGE_ACCOUNT")
 container = os.getenv("AZURE_CONTAINER")
+```
 This allows dynamic and cleaner configuration without hardcoding paths in your scripts.
 
