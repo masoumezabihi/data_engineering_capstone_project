@@ -22,3 +22,23 @@ The pipeline reads raw JSON data from Azure Blob Storage, performs data transfor
 - **Output Format:** Parquet
 
 ---
+
+##  Pipeline Steps
+
+1. **Ingest Data**
+   - Load raw OpenFDA adverse event JSON files from Azure Blob Storage.
+   - Use `self.spark.read.option("multiLine", "true").json(blob_path)`
+
+2. **Data Transformation**
+   - Flattening: All nested JSON fields are flattened for easier analysis.
+   - Cleaning: Columns with consistently missing data are dropped.
+   - Normalization: Date strings are parsed and standardized.
+   - Enrichment: Fields like sex and age_group are enriched with human-readable labels using mapping dictionaries.
+   - Deduplication: Duplicate entries (e.g., reports with the same safetyreportid) are dropped.
+   - Validation: Missing data percentages are calculated before dropping columns.
+    
+3. **Save as Parquet**
+   - Write the cleaned and transformed data back to Azure Blob Storage.
+   - Save in Parquet format.
+
+---
