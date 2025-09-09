@@ -89,7 +89,7 @@ Upload your entire Python module or scripts (Extractor.py, Transformer.py, Loade
 - Optionally schedule it or run it manually.
 
 ## Output
-Transformed data is saved in your configured output/ path in Azure Blob Storage.
-Format: Parquet
-Tables: report, patient, drug, reaction
+Transformed data is saved in your configured output/ path in Azure Blob Storage.<br>
+- Format: Parquet
+- Tables: report, patient, drug, reaction
 
