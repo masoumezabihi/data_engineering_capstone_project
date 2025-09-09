@@ -42,3 +42,15 @@ The pipeline reads raw JSON data from Azure Blob Storage, performs data transfor
    - Save in Parquet format.
 
 ---
+
+## How to Run
+
+### Prerequisites
+- Azure subscription
+- Azure Databricks workspace
+- Azure Blob Storage account
+- Databricks cluster with:
+  - Databricks runtime: 16.4 LTS (includes Apache Spark 3.5.2, Scala 2.12)
+  - Node type: Standard_D8s_v3 (32GB Memory, 8 cores)
+ 
+ ### Execution Steps
