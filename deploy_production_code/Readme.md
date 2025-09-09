@@ -88,3 +88,8 @@ Upload your entire Python module or scripts (Extractor.py, Transformer.py, Loade
 - Choose your cluster (single node with 8 cores).
 - Optionally schedule it or run it manually.
 
+## Output
+Transformed data is saved in your configured output/ path in Azure Blob Storage.
+Format: Parquet
+Tables: report, patient, drug, reaction
+
