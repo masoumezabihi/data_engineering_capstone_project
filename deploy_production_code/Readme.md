@@ -79,3 +79,12 @@ container = os.getenv("AZURE_CONTAINER")
 ```
 This allows dynamic and cleaner configuration without hardcoding paths in your scripts.
 
+#### 3 Upload Python Code to Azure Databricks
+Upload your entire Python module or scripts (Extractor.py, Transformer.py, Loader.py, ETLProcessor.py, Logger.py, etc.) into Workspace > Users > YourUser > Repos or Folders in Databricks.
+
+#### 4 Create and Run a Databricks Job
+- Go to Jobs > Create Job
+- Set the main Python file to run: e.g., ETLProcessor.py or a wrapper script.
+- Choose your cluster (single node with 8 cores).
+- Optionally schedule it or run it manually.
+
