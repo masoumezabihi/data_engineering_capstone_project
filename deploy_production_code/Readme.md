@@ -53,4 +53,28 @@ The pipeline reads raw JSON data from Azure Blob Storage, performs data transfor
   - Databricks runtime: 16.4 LTS (includes Apache Spark 3.5.2, Scala 2.12)
   - Node type: Standard_D8s_v3 (32GB Memory, 8 cores)
  
- ### Execution Steps
+ ### Steps to Execute the Pipeline
+ 
+ #### 1. Upload Raw Dataset to Azure Blob Storage
+- Place the OpenFDA adverse event JSON files directly into your Azure Blob Storage.
+
+ #### 2. Set Up Configuration in Azure Databricks
+ Before running the ETL pipeline, you need to configure your cluster to access your Azure Blob Storage and define the necessary environment variables.
+ > ##### a. Configure Spark with Storage Access Key
+ 1. Go to your cluster in Databricks (e.g., `openfda-etl-cluster`)
+2. Click **Edit > Advanced Options > Spark**
+3. Under **Spark Config**, add the following entry (replace with your actual storage account name and key):
+spark.hadoop.fs.azure.account.key.<your-storage-account>.blob.core.windows.net <your-storage-access-key>>
+ > ##### 🌍 b. Set Environment Variables for Storage
+Under the same **Advanced Options**, scroll to the **Environment Variables** section and set the following:
+AZURE_STORAGE_ACCOUNT=<your-storage-account>
+AZURE_CONTAINER=<your-blob-container>
+
+These variables will be accessible inside your Python code using `os.environ`:
+```python
+import os
+
+storage_account = os.getenv("AZURE_STORAGE_ACCOUNT")
+container = os.getenv("AZURE_CONTAINER")
+This allows dynamic and cleaner configuration without hardcoding paths in your scripts.
+
