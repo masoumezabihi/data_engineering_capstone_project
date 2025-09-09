@@ -93,3 +93,8 @@ Transformed data is saved in your configured output/ path in Azure Blob Storage.
 - Format: Parquet
 - Tables: report, patient, drug, reaction
 
+## Testing & Logs
+Custom logging is handled via the Logger class.<br>
+Output logs are printed to Databricks driver logs (accessible from the job run page).<br>
+Errors during transformation or loading are captured and reported in logs.
+
