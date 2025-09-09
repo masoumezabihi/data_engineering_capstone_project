@@ -10,3 +10,15 @@ The pipeline reads raw JSON data from Azure Blob Storage, performs data transfor
 - **Size:** ~50 GB
 - **Format:** JSON 
 - **Contains:** Adverse drug event reports submitted to the FDA by healthcare professionals, manufacturers, and consumers.
+
+---
+
+## Tech Stack
+
+- **Platform:** Azure Databricks
+- **Language:** Python (PySpark)
+- **Cluster:** Single node, 8 cores
+- **Storage:** Azure Blob Storage
+- **Output Format:** Parquet
+
+---
