@@ -4,9 +4,7 @@ This repository contains a data pipeline that processes the [OpenFDA Drug Advers
 
 The pipeline reads raw JSON data from **Azure Blob Storage**, performs data transformation and normalization using PySpark, and writes the processed output as partitioned **Parquet files** back to Blob Storage for downstream analysis.
 
----
-
-## 📌 Data Extraction (Handled Separately)
+### Data Extraction (Handled Separately)
 
 > ⚠️ The **data extraction** step—retrieving data from the OpenFDA API—is not included in this repository.
 
