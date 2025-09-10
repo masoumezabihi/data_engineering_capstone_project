@@ -15,9 +15,6 @@ This project focuses on the core **ELT pipeline**, which includes:
 - **Transforming** the data into structured DataFrames using PySpark,
 - **Saving** the curated data back to Blob Storage in Parquet format.
 
-This separation between extraction and transformation reflects common practice in modern data lake architectures.
-
-
 ---
 
 ## Dataset
