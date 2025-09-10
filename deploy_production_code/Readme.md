@@ -1,7 +1,24 @@
 # OpenFDA Adverse Event Data Pipeline on Azure Databricks
 
-This repository contains a data pipeline that processes the [OpenFDA Drug Adverse Event](https://open.fda.gov/apis/drug/event/) dataset using **Azure Databricks**. 
-The pipeline reads raw JSON data from Azure Blob Storage, performs data transformation using PySpark, and saves the processed data as partitioned Parquet files.
+This repository contains a data pipeline that processes the [OpenFDA Drug Adverse Event](https://open.fda.gov/apis/drug/event/) dataset using **Azure Databricks** and **PySpark**.
+
+The pipeline reads raw JSON data from **Azure Blob Storage**, performs data transformation and normalization using PySpark, and writes the processed output as partitioned **Parquet files** back to Blob Storage for downstream analysis.
+
+---
+
+## 📌 Data Extraction (Handled Separately)
+
+> ⚠️ The **data extraction** step—retrieving data from the OpenFDA API—is not included in this repository.
+
+Raw JSON files were collected from the OpenFDA public API in a separate step (via manual download or external script) and uploaded to **Azure Blob Storage**, which serves as the raw data layer for this pipeline.
+
+This project focuses on the core **ELT pipeline**, which includes:
+- **Loading** raw JSON files from Blob Storage,
+- **Transforming** the data into structured DataFrames using PySpark,
+- **Saving** the curated data back to Blob Storage in Parquet format.
+
+This separation between extraction and transformation reflects common practice in modern data lake architectures.
+
 
 ---
 
