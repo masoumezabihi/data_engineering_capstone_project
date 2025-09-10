@@ -10,7 +10,7 @@ The pipeline reads raw JSON data from **Azure Blob Storage**, performs data tran
 
 > ⚠️ The **data extraction** step—retrieving data from the OpenFDA API—is not included in this repository.
 
-Raw JSON files were collected from the OpenFDA public API in a separate step (via manual download or external script) and uploaded to **Azure Blob Storage**, which serves as the raw data layer for this pipeline.
+Raw JSON files were collected from the OpenFDA public API in a separate step (via script) and uploaded to **Azure Blob Storage**, which serves as the raw data layer for this pipeline.
 
 This project focuses on the core **ELT pipeline**, which includes:
 - **Loading** raw JSON files from Blob Storage,
