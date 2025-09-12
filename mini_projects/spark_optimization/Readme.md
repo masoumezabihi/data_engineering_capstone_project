@@ -2,7 +2,7 @@
 ## Project overview
 
 Apache Spark is a powerful tool for processing large datasets — but its speed heavily depends on how it's used.
-Poor code layout, unnecessary shuffles, and inefficient operations can significantly slow down your Spark jobs.
+Poor code layout, unnecessary shuffles, and inefficient operations can significantly slow down the Spark jobs.
 
 This project focuses on optimizing a PySpark query that calculates the number of answers each question received per month. You'll compare the original and optimized queries,
 analyze their execution plans, and measure improvements in performance — all on a local machine.
