@@ -37,9 +37,9 @@ Each row shows the average execution time in seconds across three runs:
 | Pushed filter (default 200 partitions) | 3.69s          | 3.60s            | Minor improvement                             |
 | Pushed filter (with 4 partitions)      | 2.96s          | 2.78s            | Minor improvement                            |
 | Repartitioning both DataFrames (200)   | 3.72s          | 2.86s            | Repartitioning improve performance       |
-| Repartitioning both DataFrames (4)     | 2.74s          | 2.94s            | Repartitioning added overhead            |
+| Repartitioning both DataFrames (4)     | 2.74s          | 2.94s            | Small overhead            |
 | Broadcast `answers_month`              | 2.92s          | 2.87s            | Small improvement                        |
-| Broadcast `questionsDF`                | 2.81s          | 2.97s            |Add overhead                              |
+| Broadcast `questionsDF`                | 2.81s          | 2.97s            | Small overhead                              |
 
 
 ## Notes
