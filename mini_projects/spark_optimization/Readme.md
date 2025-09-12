@@ -1,4 +1,4 @@
-# PySpark Query Optimization (Local Execution)
+# PySpark Query Optimization 
 ## Project overview
 
 Apache Spark is a powerful tool for processing large datasets — but its speed heavily depends on how it's used.
