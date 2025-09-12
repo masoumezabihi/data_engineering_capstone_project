@@ -39,4 +39,4 @@ Each row shows the average execution time in seconds across three runs:
 | Repartitioning both DataFrames (200)   | 3.72s          | 2.86s            | Repartitioning improve performance       |
 | Repartitioning both DataFrames (4)     | 2.74s          | 2.94s            | Repartitioning added overhead            |
 | Broadcast `answers_month`              | 2.92s          | 2.87s            | Small improvement                        |
-| Broadcast `questionsDF`                | 2.81s          | 2.97s            |-----                                     |
+| Broadcast `questionsDF`                | 2.81s          | 2.97s            |Add overhead                                    |
