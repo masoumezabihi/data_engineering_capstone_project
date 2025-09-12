@@ -44,3 +44,4 @@ Each row shows the average execution time in seconds across three runs:
 
 ## Notes
 - With smaller datasets, pushed filters show only minor improvements. The performance gain becomes more noticeable with larger datasets where I/O and scan time dominate
+- By default, Spark uses 200 shuffle partitions, which is excessive for small datasets and local development. Applying  .repartition(4, "column_id") can reduce shuffle overhead when the default (200) is active — this was noticeable in our run.However,  if spark.sql.shuffle.partitions is already set to 4, explicit repartitioning offers little to no benefit, and may even introduce    minor overhead due to the extra shuffle step.
