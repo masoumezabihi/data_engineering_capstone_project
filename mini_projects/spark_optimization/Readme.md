@@ -17,13 +17,12 @@ analyze their execution plans, and measure improvements in performance — all o
 ## Optimizations Applied
 This section summarizes the techniques applied to improve query performance, all tested locally on a 2-core CPU using ~500MB of data.
 
-| Optimization Strategy           | What Was Changed                                                                |
-| -------------------------------- | ------------------------------------------------------------------------------ |
-| ✅ Shuffle partition tuning     | `spark.conf.set("spark.sql.shuffle.partitions", 4)` instead of default `200`   |
-| ✅ Broadcast join               | Applied broadcast to the smaller DataFrame for faster joins                    |
-| ✅ Pushed filters               | Used `.filter(col("question_id").isNotNull())` early to reduce scanned data    |
-| ✅ Repartitioning by key        | Applied `.repartition(4, "question_id")` before `join()` and `groupBy()`       | 
-| ✅ Measured execution time      | Used Python’s `time.time()` to track execution performance                     |
+| Optimization Strategy        | What Was Changed                                                            |
+| ---------------------------- | ---------------------------------------------------------------------------|
+| Shuffle partition tuning     | `spark.conf.set("spark.sql.shuffle.partitions", 4)` instead of default `200`   |
+| Broadcast join               | Applied broadcast to the smaller DataFrame for faster joins                    |
+| Pushed filters               | Used `.filter(col("question_id").isNotNull())` early to reduce scanned data    |
+| Repartitioning by key        | Applied `.repartition(4, "question_id")` before `join()` and `groupBy()`       |                
 
 
 ## Performance Test Summary
