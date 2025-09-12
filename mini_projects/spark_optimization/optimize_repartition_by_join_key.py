@@ -37,9 +37,10 @@ Here we : get number of answers per question per month
 '''
 
 questionsDF = questionsDF.repartition(4, "question_id")
-answers_month = answersDF.withColumn('month', month('creation_date')).groupBy('question_id', 'month').agg(count('*').alias('cnt'))
-answers_month = answers_month.repartition(4, "question_id") 
+answersDF = answersDF.repartition(4, "question_id") 
 
+
+answers_month = answersDF.withColumn('month', month('creation_date')).groupBy('question_id', 'month').agg(count('*').alias('cnt'))
 resultDF = questionsDF.join(answers_month, 'question_id').select('question_id', 'creation_date', 'title', 'month', 'cnt')
 
 start_time = time.time()

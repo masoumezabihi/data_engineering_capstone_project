@@ -17,7 +17,6 @@ import time
 
 spark = SparkSession.builder.appName('Optimize I').getOrCreate()
 spark.conf.set("spark.sql.adaptive.enabled", "false")
-spark.conf.set("spark.sql.shuffle.partitions", 4)
 
 base_path = os.getcwd()
 
