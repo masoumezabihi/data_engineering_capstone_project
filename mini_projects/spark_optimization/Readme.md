@@ -15,7 +15,7 @@ analyze their execution plans, and measure improvements in performance — all o
     For each question, get the number of answers per month, then join this with the question metadata.
     
 ## Optimizations Applied
-This section summarizes the techniques applied to improve query performance, all tested locally on a 2-core CPU using ~500MB of data.
+This section summarizes the techniques applied to improve query performance, all tested locally on a 2-core CPU.
 
 | Optimization Strategy        | What Was Changed                                                            |
 | ---------------------------- | ---------------------------------------------------------------------------|
