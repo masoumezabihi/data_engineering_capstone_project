@@ -57,11 +57,12 @@ docker-compose -f docker-compose.kafka.yaml up -d
 docker-compose up -d
 
 This will bring up:
-- Transaction Generator (produces synthetic transactions)
-- Spark Consumer (detects fraud using Structured Streaming)
-- Fraud Exporter (exposes Prometheus metrics)
-- Prometheus
-- Grafana
+- **Kafka (KRaft mode)** – event streaming backbone
+- **Transaction Generator** – produces synthetic transactions into Kafka
+- **Spark Consumer** – detects fraud using Structured Streaming
+- **Fraud Exporter** – exposes fraud counts as Prometheus metrics
+- **Prometheus** – scrapes metrics
+- **Grafana** – visualizes fraud detection stats and system metrics
 
 ### How It Works
 Transaction Generator
