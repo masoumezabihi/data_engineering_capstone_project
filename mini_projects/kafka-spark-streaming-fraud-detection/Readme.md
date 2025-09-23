@@ -17,7 +17,7 @@ This project implements a real-time fraud detection pipeline using:
 - Provide monitoring & observability with Prometheus + Grafana
 - Deploy everything in Docker with separate composition files
 
-📂 Project Structure
+### Project Structure
 
 <pre>
 kafka-spark_streaming_fraud_detection/
@@ -43,7 +43,7 @@ kafka-spark_streaming_fraud_detection/
 
 ## Setup & Deployment
 1. Clone the Repository
-git clone https://github.com/<your-username>/kafka-spark_streaming_fraud_detection.git
+git clone [https://github.com/<your-username>/kafka-spark_streaming_fraud_detection.git](https://github.com/masoumezabihi/data_engineering_capstone_project/edit/main/mini_projects/kafka-spark-streaming-fraud-detection/Readme.md)
 cd kafka-spark_streaming_fraud_detection
 
 2. Create Kafka Network
