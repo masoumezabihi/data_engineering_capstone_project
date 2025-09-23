@@ -56,7 +56,6 @@ docker-compose -f docker-compose.kafka.yaml up -d
 4. Start the Fraud Detection System
 docker-compose up -d
 
-
 This will bring up:
 - Transaction Generator (produces synthetic transactions)
 - Spark Consumer (detects fraud using Structured Streaming)
