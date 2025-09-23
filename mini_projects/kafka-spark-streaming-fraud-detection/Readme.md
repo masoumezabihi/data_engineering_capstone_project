@@ -97,13 +97,30 @@ Prometheus
 
 📍 URL: http://localhost:9090
 
+Prometheus scrapes metrics from the fraud-exporter service. The main metrics available:
+| Metric                       | Description                                                           |
+| ---------------------------- | --------------------------------------------------------------------- |
+| `fraud_transactions_total`   | Total number of fraudulent transactions observed, labeled by currency |
+| `legit_transactions_total`   | Total number of legitimate transactions observed, labeled by currency |
+| `fraud_ratio`                | Ratio of fraudulent to total transactions (0–1 or as a percentage)    |
+
+
 Grafana
 
 📍 URL: http://localhost:3000
 
 Login credentials:
-  Username: admin
-  Password: admin
+
+Username: admin<br>
+Password: admin
+
+The Grafana dashboard includes three panels:
+- Fraud Transactions Total – counts of fraudulent transactions over time.
+- Legit Transactions Total – counts of legitimate transactions over time.
+- Fraud Ratio – gauge showing the proportion of fraud relative to total transactions.
+
+  Dashbaord:
+  ![Grafana Dashboard](./iamges/grafana.gif)
 
 
 Dashboards included:
