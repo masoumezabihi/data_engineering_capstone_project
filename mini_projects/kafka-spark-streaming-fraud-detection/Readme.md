@@ -107,12 +107,3 @@ Login credentials:
 
 
 Dashboards included:
-
-
-Improve fraud detection logic with machine learning
-
-Add real-time alerts (Slack, Email, Webhooks) for fraud events
-
-Scale to a multi-broker Kafka cluster
-
-Store transactions in Cassandra, PostgreSQL, or Elasticsearch
