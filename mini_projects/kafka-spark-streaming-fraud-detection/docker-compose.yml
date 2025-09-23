@@ -1,0 +1,85 @@
+version: "3.8"
+
+services:
+  producer:
+    build: ./generator
+    container_name: producer
+    environment:
+      KAFKA_BROKER_URL: kafka:9092
+      TRANSACTIONS_TOPIC: queueing.transactions
+      TRANSACTIONS_PER_SECOND: 1000
+    networks: 
+      - kafka-network
+
+  spark-consumer:
+    image: bitnami/spark:latest
+    container_name: spark-consumer
+    command:
+        - spark-submit
+        - --master
+        - local[*]
+        - --packages
+        - org.apache.spark:spark-sql-kafka-0-10_2.13:4.0.0
+        - /opt/spark-apps/consumer.py
+    volumes:
+        - ./consumer:/opt/spark-apps
+        - ./checkpoints/fraud:/tmp/fraud-checkpoint
+        - ./checkpoints/legit:/tmp/legit-checkpoint
+    networks:
+        - kafka-network
+
+  spark-master:
+    image: bitnami/spark:latest
+    container_name: spark-master
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "8080:8080"   # Spark Master Web UI
+      - "7077:7077"   # Spark Master port
+    networks:
+      - kafka-network
+
+  spark-worker:
+    image: bitnami/spark:latest
+    container_name: spark-worker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+    networks:
+      - kafka-network
+
+
+  fraud-exporter:
+    build: ./fraud_exporter
+    container_name: fraud-exporter
+    ports:
+      - "8000:8000"   # Prometheus metrics endpoint
+    networks:
+      - kafka-network
+    depends_on:
+      - spark-consumer
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - kafka-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - kafka-network
+    depends_on:
+      - prometheus
+networks:
+  kafka-network:
+    external: true
