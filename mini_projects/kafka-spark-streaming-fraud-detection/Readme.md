@@ -120,4 +120,5 @@ The Grafana dashboard includes three panels:
 - Fraud Ratio – gauge showing the proportion of fraud relative to total transactions.
 
   Dashbaord:
-  ![Grafana Dashboard](iamges/grafana.gif)
+  ![Grafana Dashboard](./images/grafana.gif)
+
