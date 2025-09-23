@@ -18,6 +18,8 @@ This project implements a real-time fraud detection pipeline using:
 - Deploy everything in Docker with separate composition files
 
 📂 Project Structure
+
+<pre>
 kafka-spark_streaming_fraud_detection/
 ├── consumer/              
 │   ├── Dockerfile
@@ -36,6 +38,8 @@ kafka-spark_streaming_fraud_detection/
 ├── docker-compose.kafka.yaml  
 ├── docker-compose.yml         
 └── README.md
+
+</pre>
 
 ## Setup & Deployment
 1. Clone the Repository
