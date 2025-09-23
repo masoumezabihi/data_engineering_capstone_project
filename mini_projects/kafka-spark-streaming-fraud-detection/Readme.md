@@ -43,8 +43,8 @@ kafka-spark_streaming_fraud_detection/
 
 ## Setup & Deployment
 1. Clone the Repository
-git clone [https://github.com/<your-username>/kafka-spark_streaming_fraud_detection.git](https://github.com/masoumezabihi/data_engineering_capstone_project/edit/main/mini_projects/kafka-spark-streaming-fraud-detection/Readme.md)
-cd kafka-spark_streaming_fraud_detection
+git clone [[https://github.com/<your-username>/kafka-spark_streaming_fraud_detection.git](https://github.com/masoumezabihi/data_engineering_capstone_project/edit/main/mini_projects/kafka-spark-streaming-fraud-detection/Readme.md)](https://github.com/masoumezabihi/data_engineering_capstone_project/tree/main/mini_projects/kafka-spark-streaming-fraud-detection)
+<br>cd kafka-spark_streaming_fraud_detection
 
 2. Create Kafka Network
 - Both compose files share the same network:
