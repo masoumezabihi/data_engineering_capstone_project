@@ -58,11 +58,15 @@ Two exploratory charts were created in jupyter notebook:
 
 1. **Gender Distribution of Patients**  
    - Shows male vs female breakdown in adverse event reports.  
-   - Useful to analyze demographic trends in reported reactions.  
+   - Useful to analyze demographic trends in reported reactions.
+  
+     ![Gender Distribution](gender_distribution.gif)
 
 2. **Top 10 Most Common Drugs**  
    - Extracted from the `patient.drug.medicinalproduct` column.  
-   - Highlights which medications are most frequently associated with adverse event reports.  
+   - Highlights which medications are most frequently associated with adverse event reports.
+  
+      ![Most common drugs](most_common_drugs.gif)
 
 ---
 
