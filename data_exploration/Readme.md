@@ -17,7 +17,7 @@ Dataset Source: [openFDA Drug Adverse Events](https://open.fda.gov/apis/drug/eve
 
 ---
 
-## 🔍 Data Exploration Summary
+## Data Exploration Summary
 
 ### 1. Column Homogeneity
 - Each column was checked for **data type consistency**.  
