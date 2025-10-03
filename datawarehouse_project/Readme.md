@@ -125,3 +125,19 @@ financial_year revenue
 12 1997      1.511401e+08
 13 1998      7.829449e+07
 ```
+
+## Bonus Questions  
+**1. Customer Account Balance Classification**  
+To break customer account balances into three logical groups (Low, Medium, High), I implemented a classification function in the `StarSchemaBuilder` class.  
+- Calculated the minimum and maximum account balance from the `customer.tbl` data.  
+- Divided the range into three equal intervals.  
+- Assigned each customer to one of the three groups based on their `c_acctbal`.  
+
+This classification is stored in a new field called `acctbal_class` in the `dim_customer` table.
+
+**2. Revenue per Line Item**  
+To calculate revenue per line item, I added a field `l_revenue` in the `fact_lineitem` table.  
+- Computed as: l_revenue = l_extendedprice * (1 - l_discount)<br>
+- This allows direct analysis of sales revenue at the line-item level and can be aggregated for customers, products, or periods.  
+
+These enhancements make the star schema more analytical-friendly, enabling quick insights on customer segmentation and revenue analysis.
