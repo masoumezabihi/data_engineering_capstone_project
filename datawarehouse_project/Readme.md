@@ -147,7 +147,7 @@ To calculate revenue per line item, I added a field `l_revenue` in the `fact_lin
 
 These enhancements make the star schema more analytical-friendly, enabling quick insights on customer segmentation and revenue analysis.
 
-**3. What about if the data comes from a stream, and arrives at random times?**
+**3. What about if the data comes from a stream, and arrives at random times?**<br>
 Streaming systems handle late-arriving data by using **event-time processing, watermarks, and configurable windowing strategies**. These systems prioritize processing data based on **when events actually occurred (event time)** rather than **when they arrive (processing time)**. To manage delays, they set thresholds for how long to wait for late data and update results incrementally. This ensures accurate outcomes even when data arrives **out of order** or **after initial computations**.
 “Streaming systems like Flink or Kafka Streams process data based on event time rather than just arrival time, so they can handle out-of-order or late data. The main tool for this is a **watermark**, which tells the system how far event time has progressed. When the watermark passes a window’s end, results are emitted.
 To handle late data, systems allow an **allowed lateness** period, where windows stay open a bit longer. Late events within that period update the results; events arriving after it can be sent to a side output instead of being lost.
