@@ -126,6 +126,11 @@ financial_year revenue
 13 1998      7.829449e+07
 ```
 
+## Design & Implementation Notes
+### 1. How to schedule this ETL process to run multiple times per day
+I would combine the ETL pipeline into a single script and schedule it to run multiple times a day. For a simple setup, this could be done using cron on Linux or Task Scheduler on Windows. In a production environment, I would use an orchestration tool like Apache Airflow, which offers features such as retries, monitoring, and managing dependencies. Cloud-based services like AWS Managed Airflow, GCP Cloud Composer, or Azure Data Factory can also be used to run and monitor workflows reliably at scale.
+
+
 ## Bonus Questions  
 **1. Customer Account Balance Classification**  
 To break customer account balances into three logical groups (Low, Medium, High), I implemented a classification function in the `StarSchemaBuilder` class.  
@@ -141,3 +146,10 @@ To calculate revenue per line item, I added a field `l_revenue` in the `fact_lin
 - This allows direct analysis of sales revenue at the line-item level and can be aggregated for customers, products, or periods.  
 
 These enhancements make the star schema more analytical-friendly, enabling quick insights on customer segmentation and revenue analysis.
+
+**3. What about if the data comes from a stream, and arrives at random times?**
+Streaming systems handle late-arriving data by using **event-time processing, watermarks, and configurable windowing strategies**. These systems prioritize processing data based on **when events actually occurred (event time)** rather than **when they arrive (processing time)**. To manage delays, they set thresholds for how long to wait for late data and update results incrementally. This ensures accurate outcomes even when data arrives **out of order** or **after initial computations**.
+“Streaming systems like Flink or Kafka Streams process data based on event time rather than just arrival time, so they can handle out-of-order or late data. The main tool for this is a **watermark**, which tells the system how far event time has progressed. When the watermark passes a window’s end, results are emitted.
+To handle late data, systems allow an **allowed lateness** period, where windows stay open a bit longer. Late events within that period update the results; events arriving after it can be sent to a side output instead of being lost.
+Windowing strategies and triggers define when results are fired — for example, when the watermark passes the end, or whenever new late data arrives. To support this, state is retained until the lateness period expires.
+
