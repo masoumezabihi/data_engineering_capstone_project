@@ -10,6 +10,8 @@ The pipeline:
 4. **Query** with analytical SQL queries.  
 Built in **Python (pandas + sqlite3)**. 
 
+---
+
 ## How It Works  
 
 ### **1. Extract**  
@@ -117,6 +119,8 @@ financial_year revenue
 13 1998      7.829449e+07
 ```
 
+---
+
 ## Design & Implementation Notes
 ### 1. How to schedule this ETL process to run multiple times per day
 I would combine the ETL pipeline into a single script and schedule it to run multiple times a day. For a simple setup, this could be done using cron on Linux or Task Scheduler on Windows. In a production environment, I would use an orchestration tool like Apache Airflow, which offers features such as retries, monitoring, and managing dependencies. Cloud-based services like AWS Managed Airflow, GCP Cloud Composer, or Azure Data Factory can also be used to run and monitor workflows reliably at scale.
@@ -125,6 +129,8 @@ I would combine the ETL pipeline into a single script and schedule it to run mul
 I would deploy the ETL pipeline in a consistent and portable environment using Docker. The pipeline could be scheduled with an orchestrator like Airflow or a cloud service such as AWS Managed Airflow or Azure Data Factory. To keep the project maintainable, I would use Git for version control, include logging and monitoring, and write modular, well-documented code.
 
 To run the pipeline in a container, I would create a Dockerfile that installs Python, copies the project code, and installs dependencies from requirements.txt. Configuration, such as database paths or credentials, would be passed through environment variables to make the setup flexible across environments. The ETL pipeline would be structured so it can be started with a single command (e.g., python run_etl.py), which would also serve as the container’s entrypoint. For data persistence, I would mount volumes or connect to an external database instead of relying only on a local SQLite file. Finally, I would test the Docker image locally and push it to a container registry so it can be deployed and scheduled reliably with tools like Kubernetes, Airflow, or cloud orchestration services.
+
+---
 
 ## Bonus Questions  
 **1. Customer Account Balance Classification**  
