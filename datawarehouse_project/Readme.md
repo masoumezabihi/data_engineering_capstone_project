@@ -41,7 +41,7 @@ Built in **Python (pandas + sqlite3)**.
 
 ## 🖼️ Star Schema Design  
 
-![Star Schema](star_schema.png)  
+![Star Schema](StartSchema.png)  
 
 - **Fact Table:** `fact_lineitem`  
 - **Dimensions:** Customer, Supplier, Part, Order, Date  
