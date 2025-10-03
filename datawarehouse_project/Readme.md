@@ -80,10 +80,12 @@ You should see the OLAP tables:
 After execution, the script prints analytical results directly to the console.  
 All query statements are implemented in the `OLAPQuery` class (`scripts/OLAPQuery.py`).  
 
-**Top 5 nations by revenue**  
+**Top 5 nations by revenue** 
+```
   nation        revenue
 0 MIDDLE EAST  359,205.16
 1 AFRICA       350,053.73
 2 MIDDLE EAST  339,713.20
 3 ASIA         335,867.31
 4 AFRICA       321,142.63
+```
