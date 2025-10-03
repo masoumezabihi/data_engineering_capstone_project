@@ -81,8 +81,7 @@ After execution, the script prints analytical results directly to the console.
 All query statements are implemented in the `OLAPQuery` class (`scripts/OLAPQuery.py`).  
 
 **Top 5 nations by revenue** 
-```
-  nation        revenue
+```nation       revenue
 0 MIDDLE EAST  359,205.16
 1 AFRICA       350,053.73
 2 MIDDLE EAST  339,713.20
