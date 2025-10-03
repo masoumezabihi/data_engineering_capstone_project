@@ -52,8 +52,8 @@ Built in **Python (pandas + sqlite3)**.
 
 ### 1. Clone this repository
 ```bash
-git clone https://github.com/your-username/prospa-etl-challenge.git
-cd prospa-etl-challenge
+git clone [https://github.com/your-username/prospa-etl-challenge.git](https://github.com/masoumezabihi/data_engineering_capstone_project/tree/main/datawarehouse_project)
+cd datawarehouse_project
 ```
 ### 2. Run the ETL script
 The script automatically reads data from the raw_data/ folder and creates a SQLite database:
