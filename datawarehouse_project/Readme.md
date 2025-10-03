@@ -8,17 +8,9 @@ The pipeline:
 2. **Transform** into a **star schema** for OLAP.  
 3. **Load** into a SQLite database.  
 4. **Query** with analytical SQL queries.  
+Built in **Python (pandas + sqlite3)**. 
 
-Built in **Python (pandas + sqlite3)**.  
-
----
-
-## 📂 Project Structure  
-
-
----
-
-## ⚙️ How It Works  
+## How It Works  
 
 ### **1. Extract**  
 - `OLTPLoader` reads `.tbl` files into Pandas DataFrames.  
