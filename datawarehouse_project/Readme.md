@@ -51,7 +51,7 @@ Built in **Python (pandas + sqlite3)**.
 ## Running the Project  
 
 ### 1. Clone this repository
-git clone [datawarehouse_project](https://github.com/masoumezabihi/data_engineering_capstone_project/tree/main/datawarehouse_project).
+git clone https://github.com/masoumezabihi/data_engineering_capstone_project/tree/main/datawarehouse_project<br>
 cd datawarehouse_project
 
 ### 2. Run the ETL script
