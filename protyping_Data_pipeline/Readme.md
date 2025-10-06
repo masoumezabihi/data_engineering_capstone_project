@@ -24,16 +24,11 @@ cd prototyping_Data_pipeline
 ### 2. Create a `.env` File
 
 A sample environment configuration file `env.example` is included in the repo.  
-Copy it to `.env` and update the values with your own credentials:
-
-```bash
-cp env.example .env
-
-In the root directory, create a file named .env with the following content:
-
- - Local folder to store raw data:   RAW_DATA_FOLDER=raw_data/
+- Copy it to `.env` and update the values with your own credentials:
+- In the root directory, create a file named .env with the following content:
+ - Local folder to store raw data: RAW_DATA_FOLDER=raw_data/
  - PostgreSQL configuration
-``` bash
+```bash
     POSTGRES_USER=<your_postgres_username>
     POSTGRES_PASSWORD=<your_postgres_password>
     POSTGRES_HOST=localhost
