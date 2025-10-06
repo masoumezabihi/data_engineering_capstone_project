@@ -18,7 +18,7 @@ This project is part of the **Data Engineering Bootcamp Capstone – Step 5: Pro
 
 ### 1. Clone the Repository
 
-git clone (https://github.com/masoumezabihi/data_engineering_capstone_project/edit/main/protyping_Data_pipeline)
+git clone (https://github.com/masoumezabihi/data_engineering_capstone_project/edit/main/protyping_Data_pipeline)<br>
 cd prototyping_Data_pipeline
 
 ### 2. Create a .env File
