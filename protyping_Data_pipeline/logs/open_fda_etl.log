@@ -1,0 +1,252 @@
+2025-08-07 13:59:11,916 - INFO - Initialized MainApp with folder: raw_data/
+2025-08-07 13:59:11,916 - INFO - ETL process starting...
+2025-08-07 13:59:11,916 - DEBUG - Processing file: raw_data/drug-event-0001-of-0005.json
+2025-08-07 13:59:11,916 - DEBUG - Starting ETL process...
+2025-08-07 13:59:13,222 - DEBUG - Successfully loaded data from raw_data\drug-event-0001-of-0005.json
+2025-08-07 13:59:13,245 - DEBUG - Extracted 12000 records from the 'results' key.
+2025-08-07 13:59:13,245 - DEBUG - Extracted 12000 records.
+2025-08-07 13:59:13,245 - DEBUG - Transformer initialized with records.
+2025-08-07 13:59:13,245 - DEBUG - Extracting report table.
+2025-08-07 13:59:13,245 - DEBUG - Flattening JSON with record_path=None and meta=None
+2025-08-07 13:59:19,541 - DEBUG - Report table extracted with 12000 rows.
+2025-08-07 13:59:19,542 - DEBUG - Extracted report table with 12000 rows.
+2025-08-07 13:59:19,548 - DEBUG - Dropping columns: ['transmissiondateformat', 'receivedateformat', 'receiptdateformat']
+2025-08-07 13:59:19,550 - DEBUG - Dropped 3 columns.
+2025-08-07 13:59:19,551 - DEBUG - Dropped columns: ['transmissiondateformat', 'receivedateformat', 'receiptdateformat'] from report table.
+2025-08-07 13:59:19,551 - DEBUG - Converting column 'receivedate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:19,553 - DEBUG - Converted receivedate to datetime.
+2025-08-07 13:59:19,553 - DEBUG - Converting column 'transmissiondate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:19,555 - DEBUG - Converted transmissiondate to datetime.
+2025-08-07 13:59:19,555 - DEBUG - Converting column 'receiptdate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:19,556 - DEBUG - Converted receiptdate to datetime.
+2025-08-07 13:59:19,556 - DEBUG - Extracting patient table.
+2025-08-07 13:59:19,564 - DEBUG - Patient table extracted with 12000 records.
+2025-08-07 13:59:19,571 - DEBUG - Extracted patient table with 12000 rows.
+2025-08-07 13:59:19,589 - DEBUG - Dropping columns: ['patientdeathdateformat']
+2025-08-07 13:59:19,590 - DEBUG - Dropped 1 columns.
+2025-08-07 13:59:19,591 - DEBUG - Dropped columns: ['patientdeathdateformat'] from patient table.
+2025-08-07 13:59:19,591 - DEBUG - Converting column 'patientdeathdate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:19,592 - DEBUG - Converted patientdeathdate to datetime.
+2025-08-07 13:59:19,592 - DEBUG - Calculating missing values percentage.
+2025-08-07 13:59:19,594 - DEBUG - Dropping columns: ['patientdeathdate', 'patientagegroup', 'summary']
+2025-08-07 13:59:19,594 - DEBUG - Dropped 3 columns.
+2025-08-07 13:59:19,596 - DEBUG - Added patientsex_label to DataFrame using provided mapping.
+2025-08-07 13:59:19,596 - DEBUG - Extracting drug table.
+2025-08-07 13:59:19,596 - DEBUG - Flattening JSON with record_path=['patient', 'drug'] and meta=['safetyreportid']
+2025-08-07 13:59:26,847 - DEBUG - Drug table extracted with 53678 rows.
+2025-08-07 13:59:26,847 - DEBUG - Extracted drug table with 53678 rows.
+2025-08-07 13:59:26,930 - DEBUG - Dropping columns: ['drugenddateformat', 'drugstartdateformat']
+2025-08-07 13:59:26,939 - DEBUG - Dropped 2 columns.
+2025-08-07 13:59:26,942 - DEBUG - Dropped columns: ['drugenddateformat', 'drugstartdateformat'] from drug table.
+2025-08-07 13:59:26,942 - DEBUG - Converting column 'drugenddate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:26,946 - DEBUG - Converted drugenddate to datetime.
+2025-08-07 13:59:26,946 - DEBUG - Converting column 'drugstartdate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:26,949 - DEBUG - Converted drugstartdate to datetime.
+2025-08-07 13:59:26,949 - DEBUG - Extracting reaction table.
+2025-08-07 13:59:26,949 - DEBUG - Flattening JSON with record_path=['patient', 'reaction'] and meta=['safetyreportid']
+2025-08-07 13:59:27,051 - DEBUG - Reaction table extracted with 51743 rows.
+2025-08-07 13:59:27,051 - DEBUG - Extracted reaction table with 51743 rows.
+2025-08-07 13:59:27,130 - DEBUG - Calculating missing values percentage.
+2025-08-07 13:59:27,135 - DEBUG - Dropping columns: ['reactionmeddraversionpt', 'reactionoutcome']
+2025-08-07 13:59:27,137 - DEBUG - Dropped 2 columns.
+2025-08-07 13:59:27,138 - DEBUG - Data transformation completed.
+2025-08-07 13:59:27,148 - DEBUG - Successfully created SQLAlchemy engine for database: openfda_db
+2025-08-07 13:59:27,871 - DEBUG - Successfully wrote table 'report' with 12000 rows.
+2025-08-07 13:59:27,933 - DEBUG - Set 'safetyreportid' as PRIMARY KEY for table 'report'.
+2025-08-07 13:59:27,933 - DEBUG - Report table loaded into the database.
+2025-08-07 13:59:28,091 - DEBUG - Successfully wrote table 'patient' with 12000 rows.
+2025-08-07 13:59:28,118 - DEBUG - Set 'id' as PRIMARY KEY for table 'patient'.
+2025-08-07 13:59:28,126 - DEBUG - Set FOREIGN KEY on 'patient.safetyreportid'-> 'report.safetyreportid'.
+2025-08-07 13:59:28,126 - DEBUG - Patient table loaded into the database.
+2025-08-07 13:59:38,302 - DEBUG - Successfully wrote table 'drug' with 53678 rows.
+2025-08-07 13:59:38,479 - DEBUG - Set 'id' as PRIMARY KEY for table 'drug'.
+2025-08-07 13:59:38,498 - DEBUG - Set FOREIGN KEY on 'drug.safetyreportid'-> 'report.safetyreportid'.
+2025-08-07 13:59:38,498 - DEBUG - Drug table loaded into the database.
+2025-08-07 13:59:38,882 - DEBUG - Successfully wrote table 'reaction' with 51743 rows.
+2025-08-07 13:59:39,006 - DEBUG - Set 'id' as PRIMARY KEY for table 'reaction'.
+2025-08-07 13:59:39,015 - DEBUG - Set FOREIGN KEY on 'reaction.safetyreportid'-> 'report.safetyreportid'.
+2025-08-07 13:59:39,015 - DEBUG - Reaction table loaded into the database.
+2025-08-07 13:59:39,015 - DEBUG - ETL process completed successfully.
+2025-08-07 13:59:39,178 - DEBUG - Processing file: raw_data/drug-event-0001-of-0006.json
+2025-08-07 13:59:39,178 - DEBUG - Starting ETL process...
+2025-08-07 13:59:40,324 - DEBUG - Successfully loaded data from raw_data\drug-event-0001-of-0006.json
+2025-08-07 13:59:40,335 - DEBUG - Extracted 12000 records from the 'results' key.
+2025-08-07 13:59:40,335 - DEBUG - Extracted 12000 records.
+2025-08-07 13:59:40,335 - DEBUG - Transformer initialized with records.
+2025-08-07 13:59:40,335 - DEBUG - Extracting report table.
+2025-08-07 13:59:40,335 - DEBUG - Flattening JSON with record_path=None and meta=None
+2025-08-07 13:59:46,096 - DEBUG - Report table extracted with 12000 rows.
+2025-08-07 13:59:46,096 - DEBUG - Extracted report table with 12000 rows.
+2025-08-07 13:59:46,102 - DEBUG - Dropping columns: ['transmissiondateformat', 'receivedateformat', 'receiptdateformat']
+2025-08-07 13:59:46,104 - DEBUG - Dropped 3 columns.
+2025-08-07 13:59:46,104 - DEBUG - Dropped columns: ['transmissiondateformat', 'receivedateformat', 'receiptdateformat'] from report table.
+2025-08-07 13:59:46,104 - DEBUG - Converting column 'receivedate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:46,106 - DEBUG - Converted receivedate to datetime.
+2025-08-07 13:59:46,106 - DEBUG - Converting column 'transmissiondate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:46,107 - DEBUG - Converted transmissiondate to datetime.
+2025-08-07 13:59:46,107 - DEBUG - Converting column 'receiptdate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:46,108 - DEBUG - Converted receiptdate to datetime.
+2025-08-07 13:59:46,108 - DEBUG - Extracting patient table.
+2025-08-07 13:59:46,116 - DEBUG - Patient table extracted with 12000 records.
+2025-08-07 13:59:46,123 - DEBUG - Extracted patient table with 12000 rows.
+2025-08-07 13:59:46,143 - DEBUG - Dropping columns: ['patientdeathdateformat']
+2025-08-07 13:59:46,145 - DEBUG - Dropped 1 columns.
+2025-08-07 13:59:46,145 - DEBUG - Dropped columns: ['patientdeathdateformat'] from patient table.
+2025-08-07 13:59:46,145 - DEBUG - Converting column 'patientdeathdate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:46,145 - DEBUG - Converted patientdeathdate to datetime.
+2025-08-07 13:59:46,145 - DEBUG - Calculating missing values percentage.
+2025-08-07 13:59:46,147 - DEBUG - Dropping columns: ['patientagegroup', 'summary', 'patientdeathdate']
+2025-08-07 13:59:46,148 - DEBUG - Dropped 3 columns.
+2025-08-07 13:59:46,149 - DEBUG - Added patientsex_label to DataFrame using provided mapping.
+2025-08-07 13:59:46,149 - DEBUG - Extracting drug table.
+2025-08-07 13:59:46,149 - DEBUG - Flattening JSON with record_path=['patient', 'drug'] and meta=['safetyreportid']
+2025-08-07 13:59:53,009 - DEBUG - Drug table extracted with 53807 rows.
+2025-08-07 13:59:53,009 - DEBUG - Extracted drug table with 53807 rows.
+2025-08-07 13:59:53,097 - DEBUG - Dropping columns: ['drugenddateformat', 'drugstartdateformat']
+2025-08-07 13:59:53,104 - DEBUG - Dropped 2 columns.
+2025-08-07 13:59:53,108 - DEBUG - Dropped columns: ['drugenddateformat', 'drugstartdateformat'] from drug table.
+2025-08-07 13:59:53,108 - DEBUG - Converting column 'drugenddate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:53,111 - DEBUG - Converted drugenddate to datetime.
+2025-08-07 13:59:53,111 - DEBUG - Converting column 'drugstartdate' to datetime with format '%Y%m%d'.
+2025-08-07 13:59:53,115 - DEBUG - Converted drugstartdate to datetime.
+2025-08-07 13:59:53,115 - DEBUG - Extracting reaction table.
+2025-08-07 13:59:53,115 - DEBUG - Flattening JSON with record_path=['patient', 'reaction'] and meta=['safetyreportid']
+2025-08-07 13:59:53,214 - DEBUG - Reaction table extracted with 50561 rows.
+2025-08-07 13:59:53,214 - DEBUG - Extracted reaction table with 50561 rows.
+2025-08-07 13:59:53,291 - DEBUG - Calculating missing values percentage.
+2025-08-07 13:59:53,294 - DEBUG - Dropping columns: []
+2025-08-07 13:59:53,296 - DEBUG - Dropped 0 columns.
+2025-08-07 13:59:53,297 - DEBUG - Data transformation completed.
+2025-08-07 13:59:53,297 - DEBUG - Successfully created SQLAlchemy engine for database: openfda_db
+2025-08-07 13:59:54,229 - DEBUG - Successfully wrote table 'report' with 11995 rows.
+2025-08-07 13:59:54,259 - DEBUG - Report table loaded into the database.
+2025-08-07 13:59:54,508 - DEBUG - Successfully wrote table 'patient' with 12000 rows.
+2025-08-07 13:59:54,512 - DEBUG - Patient table loaded into the database.
+2025-08-07 14:00:04,167 - DEBUG - Successfully wrote table 'drug' with 53807 rows.
+2025-08-07 14:00:04,170 - DEBUG - Drug table loaded into the database.
+2025-08-07 14:00:05,231 - DEBUG - Successfully wrote table 'reaction' with 50561 rows.
+2025-08-07 14:00:05,233 - DEBUG - Reaction table loaded into the database.
+2025-08-07 14:00:05,233 - DEBUG - ETL process completed successfully.
+2025-08-07 14:00:05,389 - DEBUG - Processing file: raw_data/drug-event-0001-of-0007.json
+2025-08-07 14:00:05,389 - DEBUG - Starting ETL process...
+2025-08-07 14:00:06,929 - DEBUG - Successfully loaded data from raw_data\drug-event-0001-of-0007.json
+2025-08-07 14:00:06,946 - DEBUG - Extracted 12000 records from the 'results' key.
+2025-08-07 14:00:06,946 - DEBUG - Extracted 12000 records.
+2025-08-07 14:00:06,946 - DEBUG - Transformer initialized with records.
+2025-08-07 14:00:06,946 - DEBUG - Extracting report table.
+2025-08-07 14:00:06,946 - DEBUG - Flattening JSON with record_path=None and meta=None
+2025-08-07 14:00:14,485 - DEBUG - Report table extracted with 12000 rows.
+2025-08-07 14:00:14,485 - DEBUG - Extracted report table with 12000 rows.
+2025-08-07 14:00:14,493 - DEBUG - Dropping columns: ['transmissiondateformat', 'receivedateformat', 'receiptdateformat']
+2025-08-07 14:00:14,495 - DEBUG - Dropped 3 columns.
+2025-08-07 14:00:14,496 - DEBUG - Dropped columns: ['transmissiondateformat', 'receivedateformat', 'receiptdateformat'] from report table.
+2025-08-07 14:00:14,497 - DEBUG - Converting column 'receivedate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:14,498 - DEBUG - Converted receivedate to datetime.
+2025-08-07 14:00:14,498 - DEBUG - Converting column 'transmissiondate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:14,499 - DEBUG - Converted transmissiondate to datetime.
+2025-08-07 14:00:14,499 - DEBUG - Converting column 'receiptdate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:14,500 - DEBUG - Converted receiptdate to datetime.
+2025-08-07 14:00:14,500 - DEBUG - Extracting patient table.
+2025-08-07 14:00:14,509 - DEBUG - Patient table extracted with 12000 records.
+2025-08-07 14:00:14,516 - DEBUG - Extracted patient table with 12000 rows.
+2025-08-07 14:00:14,536 - DEBUG - Dropping columns: ['patientdeathdateformat']
+2025-08-07 14:00:14,537 - DEBUG - Dropped 1 columns.
+2025-08-07 14:00:14,537 - DEBUG - Dropped columns: ['patientdeathdateformat'] from patient table.
+2025-08-07 14:00:14,537 - DEBUG - Converting column 'patientdeathdate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:14,538 - DEBUG - Converted patientdeathdate to datetime.
+2025-08-07 14:00:14,538 - DEBUG - Calculating missing values percentage.
+2025-08-07 14:00:14,540 - DEBUG - Dropping columns: ['patientagegroup', 'patientdeathdate', 'summary']
+2025-08-07 14:00:14,541 - DEBUG - Dropped 3 columns.
+2025-08-07 14:00:14,543 - DEBUG - Added patientsex_label to DataFrame using provided mapping.
+2025-08-07 14:00:14,543 - DEBUG - Extracting drug table.
+2025-08-07 14:00:14,543 - DEBUG - Flattening JSON with record_path=['patient', 'drug'] and meta=['safetyreportid']
+2025-08-07 14:00:23,333 - DEBUG - Drug table extracted with 58509 rows.
+2025-08-07 14:00:23,333 - DEBUG - Extracted drug table with 58509 rows.
+2025-08-07 14:00:23,429 - DEBUG - Dropping columns: ['drugenddateformat', 'drugstartdateformat']
+2025-08-07 14:00:23,439 - DEBUG - Dropped 2 columns.
+2025-08-07 14:00:23,444 - DEBUG - Dropped columns: ['drugenddateformat', 'drugstartdateformat'] from drug table.
+2025-08-07 14:00:23,444 - DEBUG - Converting column 'drugenddate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:23,447 - DEBUG - Converted drugenddate to datetime.
+2025-08-07 14:00:23,447 - DEBUG - Converting column 'drugstartdate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:23,451 - DEBUG - Converted drugstartdate to datetime.
+2025-08-07 14:00:23,451 - DEBUG - Extracting reaction table.
+2025-08-07 14:00:23,451 - DEBUG - Flattening JSON with record_path=['patient', 'reaction'] and meta=['safetyreportid']
+2025-08-07 14:00:23,548 - DEBUG - Reaction table extracted with 44107 rows.
+2025-08-07 14:00:23,548 - DEBUG - Extracted reaction table with 44107 rows.
+2025-08-07 14:00:23,620 - DEBUG - Calculating missing values percentage.
+2025-08-07 14:00:23,624 - DEBUG - Dropping columns: ['reactionoutcome', 'reactionmeddraversionpt']
+2025-08-07 14:00:23,626 - DEBUG - Dropped 2 columns.
+2025-08-07 14:00:23,626 - DEBUG - Data transformation completed.
+2025-08-07 14:00:23,627 - DEBUG - Successfully created SQLAlchemy engine for database: openfda_db
+2025-08-07 14:00:24,258 - DEBUG - Successfully wrote table 'report' with 11999 rows.
+2025-08-07 14:00:24,291 - DEBUG - Report table loaded into the database.
+2025-08-07 14:00:24,557 - DEBUG - Successfully wrote table 'patient' with 12000 rows.
+2025-08-07 14:00:24,561 - DEBUG - Patient table loaded into the database.
+2025-08-07 14:00:24,565 - DEBUG - Added missing column 'drugrecurreadministration' to table 'drug'.
+2025-08-07 14:00:24,565 - DEBUG - Added missing column 'drugadditional' to table 'drug'.
+2025-08-07 14:00:38,466 - DEBUG - Successfully wrote table 'drug' with 58509 rows.
+2025-08-07 14:00:38,470 - DEBUG - Drug table loaded into the database.
+2025-08-07 14:00:39,412 - DEBUG - Successfully wrote table 'reaction' with 44107 rows.
+2025-08-07 14:00:39,414 - DEBUG - Reaction table loaded into the database.
+2025-08-07 14:00:39,414 - DEBUG - ETL process completed successfully.
+2025-08-07 14:00:39,640 - DEBUG - Processing file: raw_data/drug-event-0001-of-0008.json
+2025-08-07 14:00:39,640 - DEBUG - Starting ETL process...
+2025-08-07 14:00:41,228 - DEBUG - Successfully loaded data from raw_data\drug-event-0001-of-0008.json
+2025-08-07 14:00:41,251 - DEBUG - Extracted 12000 records from the 'results' key.
+2025-08-07 14:00:41,251 - DEBUG - Extracted 12000 records.
+2025-08-07 14:00:41,251 - DEBUG - Transformer initialized with records.
+2025-08-07 14:00:41,251 - DEBUG - Extracting report table.
+2025-08-07 14:00:41,251 - DEBUG - Flattening JSON with record_path=None and meta=None
+2025-08-07 14:00:48,730 - DEBUG - Report table extracted with 12000 rows.
+2025-08-07 14:00:48,731 - DEBUG - Extracted report table with 12000 rows.
+2025-08-07 14:00:48,739 - DEBUG - Dropping columns: ['transmissiondateformat', 'receivedateformat', 'receiptdateformat']
+2025-08-07 14:00:48,741 - DEBUG - Dropped 3 columns.
+2025-08-07 14:00:48,742 - DEBUG - Dropped columns: ['transmissiondateformat', 'receivedateformat', 'receiptdateformat'] from report table.
+2025-08-07 14:00:48,743 - DEBUG - Converting column 'receivedate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:48,744 - DEBUG - Converted receivedate to datetime.
+2025-08-07 14:00:48,744 - DEBUG - Converting column 'transmissiondate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:48,746 - DEBUG - Converted transmissiondate to datetime.
+2025-08-07 14:00:48,746 - DEBUG - Converting column 'receiptdate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:48,747 - DEBUG - Converted receiptdate to datetime.
+2025-08-07 14:00:48,747 - DEBUG - Extracting patient table.
+2025-08-07 14:00:48,757 - DEBUG - Patient table extracted with 12000 records.
+2025-08-07 14:00:48,763 - DEBUG - Extracted patient table with 12000 rows.
+2025-08-07 14:00:48,783 - DEBUG - Dropping columns: ['patientdeathdateformat']
+2025-08-07 14:00:48,784 - DEBUG - Dropped 1 columns.
+2025-08-07 14:00:48,784 - DEBUG - Dropped columns: ['patientdeathdateformat'] from patient table.
+2025-08-07 14:00:48,784 - DEBUG - Converting column 'patientdeathdate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:48,785 - DEBUG - Converted patientdeathdate to datetime.
+2025-08-07 14:00:48,785 - DEBUG - Calculating missing values percentage.
+2025-08-07 14:00:48,788 - DEBUG - Dropping columns: ['patientagegroup', 'patientdeathdate', 'summary']
+2025-08-07 14:00:48,788 - DEBUG - Dropped 3 columns.
+2025-08-07 14:00:48,789 - DEBUG - Added patientsex_label to DataFrame using provided mapping.
+2025-08-07 14:00:48,789 - DEBUG - Extracting drug table.
+2025-08-07 14:00:48,789 - DEBUG - Flattening JSON with record_path=['patient', 'drug'] and meta=['safetyreportid']
+2025-08-07 14:00:57,764 - DEBUG - Drug table extracted with 57105 rows.
+2025-08-07 14:00:57,764 - DEBUG - Extracted drug table with 57105 rows.
+2025-08-07 14:00:57,860 - DEBUG - Dropping columns: ['drugenddateformat', 'drugstartdateformat']
+2025-08-07 14:00:57,871 - DEBUG - Dropped 2 columns.
+2025-08-07 14:00:57,875 - DEBUG - Dropped columns: ['drugenddateformat', 'drugstartdateformat'] from drug table.
+2025-08-07 14:00:57,875 - DEBUG - Converting column 'drugenddate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:57,879 - DEBUG - Converted drugenddate to datetime.
+2025-08-07 14:00:57,879 - DEBUG - Converting column 'drugstartdate' to datetime with format '%Y%m%d'.
+2025-08-07 14:00:57,883 - DEBUG - Converted drugstartdate to datetime.
+2025-08-07 14:00:57,883 - DEBUG - Extracting reaction table.
+2025-08-07 14:00:57,883 - DEBUG - Flattening JSON with record_path=['patient', 'reaction'] and meta=['safetyreportid']
+2025-08-07 14:00:57,975 - DEBUG - Reaction table extracted with 41395 rows.
+2025-08-07 14:00:57,976 - DEBUG - Extracted reaction table with 41395 rows.
+2025-08-07 14:00:58,045 - DEBUG - Calculating missing values percentage.
+2025-08-07 14:00:58,050 - DEBUG - Dropping columns: ['reactionmeddraversionpt', 'reactionoutcome']
+2025-08-07 14:00:58,051 - DEBUG - Dropped 2 columns.
+2025-08-07 14:00:58,052 - DEBUG - Data transformation completed.
+2025-08-07 14:00:58,052 - DEBUG - Successfully created SQLAlchemy engine for database: openfda_db
+2025-08-07 14:00:58,682 - DEBUG - Successfully wrote table 'report' with 11998 rows.
+2025-08-07 14:00:58,718 - DEBUG - Report table loaded into the database.
+2025-08-07 14:00:58,974 - DEBUG - Successfully wrote table 'patient' with 12000 rows.
+2025-08-07 14:00:58,978 - DEBUG - Patient table loaded into the database.
+2025-08-07 14:01:11,632 - DEBUG - Successfully wrote table 'drug' with 57105 rows.
+2025-08-07 14:01:11,637 - DEBUG - Drug table loaded into the database.
+2025-08-07 14:01:12,298 - DEBUG - Successfully wrote table 'reaction' with 41395 rows.
+2025-08-07 14:01:12,302 - DEBUG - Reaction table loaded into the database.
+2025-08-07 14:01:12,302 - DEBUG - ETL process completed successfully.
+2025-08-07 14:01:12,422 - INFO - ETL process completed for all files.
