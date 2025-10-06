@@ -21,19 +21,25 @@ This project is part of the **Data Engineering Bootcamp Capstone – Step 5: Pro
 git clone (https://github.com/masoumezabihi/data_engineering_capstone_project/edit/main/protyping_Data_pipeline)<br>
 cd prototyping_Data_pipeline
 
-### 2. Create a .env File
+### 2. Create a `.env` File
+
+A sample environment configuration file `env.example` is included in the repo.  
+Copy it to `.env` and update the values with your own credentials:
+
+```bash
+cp env.example .env
 
 In the root directory, create a file named .env with the following content:
 
-# Local folder to store raw data
-RAW_DATA_FOLDER=raw_data/
-
-# PostgreSQL configuration
-POSTGRES_USER=<your_postgres_username>
-POSTGRES_PASSWORD=<your_postgres_password>
-POSTGRES_HOST=localhost
-POSTGRES_PORT=<your_postgres_port>
-POSTGRES_DB=<database_name>
+ - Local folder to store raw data:   RAW_DATA_FOLDER=raw_data/
+ - PostgreSQL configuration
+```bash
+    POSTGRES_USER=<your_postgres_username>
+    POSTGRES_PASSWORD=<your_postgres_password>
+    POSTGRES_HOST=localhost
+    POSTGRES_PORT=<your_postgres_port>
+    POSTGRES_DB=<database_name><br>
+```
 ⚠️ Important: Never commit your .env file to version control.
 
 ### 3. Running the Pipeline
