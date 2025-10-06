@@ -26,7 +26,7 @@ class Logger:
         logging.basicConfig(
             level=log_level,
             format='%(asctime)s - %(levelname)s - %(message)s',
-            handlers=[logging.FileHandler(log_file)]
+            handlers=[logging.FileHandler(log_file, mode = 'w')]
         )
 
     @staticmethod

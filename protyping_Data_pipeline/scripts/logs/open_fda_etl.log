@@ -1,0 +1,132 @@
+2025-10-06 11:08:07,674 - INFO - Initialized MainApp with folder: raw_data/
+2025-10-06 11:08:07,674 - INFO - Pipeline starting...
+2025-10-06 11:08:07,674 - INFO - Starting data ingestion...
+2025-10-06 11:08:07,674 - DEBUG - Attempt 1 to fetch partition metadata...
+2025-10-06 11:08:07,675 - DEBUG - Starting new HTTPS connection (1): api.fda.gov:443
+2025-10-06 11:08:08,387 - DEBUG - https://api.fda.gov:443 "GET /download.json HTTP/11" 200 29548
+2025-10-06 11:08:08,473 - DEBUG - drug-event-0001-of-0005.json already exists. Skipping.
+2025-10-06 11:08:08,473 - DEBUG - drug-event-0002-of-0005.json already exists. Skipping.
+2025-10-06 11:08:08,473 - DEBUG - drug-event-0003-of-0005.json already exists. Skipping.
+2025-10-06 11:08:08,474 - DEBUG - drug-event-0004-of-0005.json already exists. Skipping.
+2025-10-06 11:08:08,474 - DEBUG - drug-event-0005-of-0005.json already exists. Skipping.
+2025-10-06 11:08:08,474 - DEBUG - Downloaded and extracted 5 JSON files.
+2025-10-06 11:08:08,474 - INFO - Ingestion completed. 5 files downloaded.
+2025-10-06 11:08:08,474 - INFO - Starting ETL process...
+2025-10-06 11:08:08,474 - DEBUG - Processing file: c:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\capstone project_temp\protyping_Data_pipeline\raw_data/drug-event-0001-of-0005.json
+2025-10-06 11:08:08,474 - DEBUG - Starting ETL process...
+2025-10-06 11:08:09,076 - DEBUG - Successfully loaded data from c:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\capstone project_temp\protyping_Data_pipeline\raw_data\drug-event-0001-of-0005.json
+2025-10-06 11:08:09,086 - DEBUG - Extracted 12000 records from the 'results' key.
+2025-10-06 11:08:09,086 - DEBUG - Transformer initialized with records.
+2025-10-06 11:08:09,086 - DEBUG - Extracting report table...
+2025-10-06 11:08:09,285 - DEBUG - Report table extracted with 12000 rows.
+2025-10-06 11:08:09,295 - DEBUG - Dropping columns: ['seriousnessdisabling', 'receiver', 'primarysource', 'seriousnesscongenitalanomali', 'safetyreportversion', 'primarysourcecountry', 'occurcountry', 'reporttype', 'duplicate', 'reportduplicate.duplicatesource', 'reportduplicate.duplicatenumb', 'sender.sendertype', 'receiver.receivertype', 'receiver.receiverorganization']
+2025-10-06 11:08:09,309 - DEBUG - Extracting patient table...
+2025-10-06 11:08:09,323 - DEBUG - Patient table extracted with 12000 rows.
+2025-10-06 11:08:09,325 - DEBUG - Dropping columns: ['age_group', 'narrative', 'death_date', 'death_date_format']
+2025-10-06 11:08:09,328 - DEBUG - Extracting drug table...
+2025-10-06 11:08:12,705 - DEBUG - Drug table extracted with 33762 rows.
+2025-10-06 11:08:12,716 - DEBUG - Dropping columns: ['drugtreatmentdurationunit', 'drugdosageform', 'actiondrug', 'drugadditional', 'activesubstance.activesubstancename', 'drugstructuredosagenumb', 'drugstructuredosageunit', 'drugrecurreadministration']
+2025-10-06 11:08:12,721 - DEBUG - Extracting reaction table...
+2025-10-06 11:08:12,800 - DEBUG - Reaction table extracted with 36938 rows.
+2025-10-06 11:08:12,803 - DEBUG - Dropping columns: ['reactionmeddraversionpt', 'reactionoutcome']
+2025-10-06 11:08:12,825 - DEBUG - Successfully created SQLAlchemy engine for database: openfda_db
+2025-10-06 11:08:13,429 - DEBUG - Successfully wrote table 'report' with 12000 rows.
+2025-10-06 11:08:13,580 - DEBUG - Successfully wrote table 'patient' with 12000 rows.
+2025-10-06 11:08:17,921 - DEBUG - Successfully wrote table 'drug' with 33762 rows.
+2025-10-06 11:08:18,341 - DEBUG - Successfully wrote table 'reaction' with 36938 rows.
+2025-10-06 11:08:18,341 - DEBUG - ETL completed successfully.
+2025-10-06 11:08:18,428 - DEBUG - Processing file: c:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\capstone project_temp\protyping_Data_pipeline\raw_data/drug-event-0002-of-0005.json
+2025-10-06 11:08:18,428 - DEBUG - Starting ETL process...
+2025-10-06 11:08:18,647 - DEBUG - Successfully loaded data from c:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\capstone project_temp\protyping_Data_pipeline\raw_data\drug-event-0002-of-0005.json
+2025-10-06 11:08:18,650 - DEBUG - Extracted 12000 records from the 'results' key.
+2025-10-06 11:08:18,650 - DEBUG - Transformer initialized with records.
+2025-10-06 11:08:18,650 - DEBUG - Extracting report table...
+2025-10-06 11:08:18,787 - DEBUG - Report table extracted with 12000 rows.
+2025-10-06 11:08:18,794 - DEBUG - Dropping columns: ['receiver', 'primarysource', 'seriousnesslifethreatening', 'seriousnessdisabling', 'seriousnesscongenitalanomali', 'safetyreportversion', 'primarysourcecountry', 'occurcountry', 'reporttype', 'duplicate', 'reportduplicate.duplicatesource', 'reportduplicate.duplicatenumb', 'sender.sendertype', 'receiver.receivertype', 'receiver.receiverorganization']
+2025-10-06 11:08:18,800 - DEBUG - Extracting patient table...
+2025-10-06 11:08:18,815 - DEBUG - Patient table extracted with 12000 rows.
+2025-10-06 11:08:18,817 - DEBUG - Dropping columns: ['age_group', 'narrative', 'death_date', 'death_date_format']
+2025-10-06 11:08:18,819 - DEBUG - Extracting drug table...
+2025-10-06 11:08:20,265 - DEBUG - Drug table extracted with 21236 rows.
+2025-10-06 11:08:20,273 - DEBUG - Dropping columns: ['drugdosageform', 'actiondrug', 'drugrecurreadministration', 'drugadditional', 'activesubstance.activesubstancename', 'drugstructuredosagenumb', 'drugstructuredosageunit']
+2025-10-06 11:08:20,278 - DEBUG - Extracting reaction table...
+2025-10-06 11:08:20,348 - DEBUG - Reaction table extracted with 30707 rows.
+2025-10-06 11:08:20,350 - DEBUG - Dropping columns: ['reactionmeddraversionpt', 'reactionoutcome']
+2025-10-06 11:08:20,352 - DEBUG - Successfully created SQLAlchemy engine for database: openfda_db
+2025-10-06 11:08:20,977 - DEBUG - Successfully wrote table 'report' with 12000 rows.
+2025-10-06 11:08:21,122 - DEBUG - Successfully wrote table 'patient' with 12000 rows.
+2025-10-06 11:08:21,128 - DEBUG - Added missing column 'drugtreatmentdurationunit' to table 'drug'.
+2025-10-06 11:08:22,901 - DEBUG - Successfully wrote table 'drug' with 21236 rows.
+2025-10-06 11:08:23,183 - DEBUG - Successfully wrote table 'reaction' with 30707 rows.
+2025-10-06 11:08:23,184 - DEBUG - ETL completed successfully.
+2025-10-06 11:08:23,211 - DEBUG - Processing file: c:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\capstone project_temp\protyping_Data_pipeline\raw_data/drug-event-0003-of-0005.json
+2025-10-06 11:08:23,212 - DEBUG - Starting ETL process...
+2025-10-06 11:08:24,016 - DEBUG - Successfully loaded data from c:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\capstone project_temp\protyping_Data_pipeline\raw_data\drug-event-0003-of-0005.json
+2025-10-06 11:08:24,029 - DEBUG - Extracted 12000 records from the 'results' key.
+2025-10-06 11:08:24,029 - DEBUG - Transformer initialized with records.
+2025-10-06 11:08:24,029 - DEBUG - Extracting report table...
+2025-10-06 11:08:24,266 - DEBUG - Report table extracted with 12000 rows.
+2025-10-06 11:08:24,272 - DEBUG - Dropping columns: ['receiver', 'primarysource', 'seriousnesslifethreatening', 'seriousnesscongenitalanomali', 'safetyreportversion', 'primarysourcecountry', 'occurcountry', 'reporttype', 'duplicate', 'reportduplicate.duplicatesource', 'reportduplicate.duplicatenumb', 'sender.sendertype', 'receiver.receivertype', 'receiver.receiverorganization', 'seriousnessdisabling']
+2025-10-06 11:08:24,280 - DEBUG - Extracting patient table...
+2025-10-06 11:08:24,296 - DEBUG - Patient table extracted with 12000 rows.
+2025-10-06 11:08:24,298 - DEBUG - Dropping columns: ['age_group', 'narrative', 'death_date', 'death_date_format']
+2025-10-06 11:08:24,300 - DEBUG - Extracting drug table...
+2025-10-06 11:08:29,086 - DEBUG - Drug table extracted with 44224 rows.
+2025-10-06 11:08:29,101 - DEBUG - Dropping columns: ['drugtreatmentdurationunit', 'drugdosageform', 'actiondrug', 'drugadditional', 'activesubstance.activesubstancename', 'drugstructuredosagenumb', 'drugstructuredosageunit', 'drugrecurreadministration']
+2025-10-06 11:08:29,110 - DEBUG - Extracting reaction table...
+2025-10-06 11:08:29,196 - DEBUG - Reaction table extracted with 41108 rows.
+2025-10-06 11:08:29,200 - DEBUG - Dropping columns: ['reactionmeddraversionpt', 'reactionoutcome']
+2025-10-06 11:08:29,201 - DEBUG - Successfully created SQLAlchemy engine for database: openfda_db
+2025-10-06 11:08:29,679 - DEBUG - Successfully wrote table 'report' with 12000 rows.
+2025-10-06 11:08:29,833 - DEBUG - Successfully wrote table 'patient' with 12000 rows.
+2025-10-06 11:08:35,552 - DEBUG - Successfully wrote table 'drug' with 44224 rows.
+2025-10-06 11:08:36,138 - DEBUG - Successfully wrote table 'reaction' with 41108 rows.
+2025-10-06 11:08:36,138 - DEBUG - ETL completed successfully.
+2025-10-06 11:08:36,259 - DEBUG - Processing file: c:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\capstone project_temp\protyping_Data_pipeline\raw_data/drug-event-0004-of-0005.json
+2025-10-06 11:08:36,259 - DEBUG - Starting ETL process...
+2025-10-06 11:08:38,233 - DEBUG - Successfully loaded data from c:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\capstone project_temp\protyping_Data_pipeline\raw_data\drug-event-0004-of-0005.json
+2025-10-06 11:08:38,263 - DEBUG - Extracted 12000 records from the 'results' key.
+2025-10-06 11:08:38,263 - DEBUG - Transformer initialized with records.
+2025-10-06 11:08:38,263 - DEBUG - Extracting report table...
+2025-10-06 11:08:38,624 - DEBUG - Report table extracted with 12000 rows.
+2025-10-06 11:08:38,630 - DEBUG - Dropping columns: ['receiver', 'primarysource', 'seriousnessdisabling', 'seriousnesscongenitalanomali', 'safetyreportversion', 'primarysourcecountry', 'occurcountry', 'reporttype', 'duplicate', 'reportduplicate.duplicatesource', 'reportduplicate.duplicatenumb', 'sender.sendertype', 'receiver.receivertype', 'receiver.receiverorganization']
+2025-10-06 11:08:38,636 - DEBUG - Extracting patient table...
+2025-10-06 11:08:38,651 - DEBUG - Patient table extracted with 12000 rows.
+2025-10-06 11:08:38,653 - DEBUG - Dropping columns: ['age_group', 'narrative', 'death_date', 'death_date_format']
+2025-10-06 11:08:38,656 - DEBUG - Extracting drug table...
+2025-10-06 11:08:48,107 - DEBUG - Drug table extracted with 65431 rows.
+2025-10-06 11:08:48,127 - DEBUG - Dropping columns: ['drugtreatmentdurationunit', 'drugbatchnumb', 'drugstructuredosagenumb', 'drugstructuredosageunit', 'drugdosageform', 'actiondrug', 'drugadditional', 'activesubstance.activesubstancename']
+2025-10-06 11:08:48,138 - DEBUG - Extracting reaction table...
+2025-10-06 11:08:48,239 - DEBUG - Reaction table extracted with 49736 rows.
+2025-10-06 11:08:48,242 - DEBUG - Dropping columns: ['reactionmeddraversionpt']
+2025-10-06 11:08:48,244 - DEBUG - Successfully created SQLAlchemy engine for database: openfda_db
+2025-10-06 11:08:48,290 - DEBUG - Added missing column 'seriousnesslifethreatening' to table 'report'.
+2025-10-06 11:08:48,727 - DEBUG - Successfully wrote table 'report' with 12000 rows.
+2025-10-06 11:08:48,876 - DEBUG - Successfully wrote table 'patient' with 12000 rows.
+2025-10-06 11:09:03,095 - DEBUG - Successfully wrote table 'drug' with 65431 rows.
+2025-10-06 11:09:03,414 - DEBUG - Successfully wrote table 'reaction' with 49736 rows.
+2025-10-06 11:09:03,414 - DEBUG - ETL completed successfully.
+2025-10-06 11:09:03,713 - DEBUG - Processing file: c:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\capstone project_temp\protyping_Data_pipeline\raw_data/drug-event-0005-of-0005.json
+2025-10-06 11:09:03,713 - DEBUG - Starting ETL process...
+2025-10-06 11:09:04,707 - DEBUG - Successfully loaded data from c:\Users\hamid\OneDrive\Desktop\masoume\springboard_data_engineering\capstone project_temp\protyping_Data_pipeline\raw_data\drug-event-0005-of-0005.json
+2025-10-06 11:09:04,721 - DEBUG - Extracted 6009 records from the 'results' key.
+2025-10-06 11:09:04,721 - DEBUG - Transformer initialized with records.
+2025-10-06 11:09:04,721 - DEBUG - Extracting report table...
+2025-10-06 11:09:05,076 - DEBUG - Report table extracted with 6009 rows.
+2025-10-06 11:09:05,079 - DEBUG - Dropping columns: ['receiver', 'primarysource', 'seriousnessdisabling', 'seriousnesscongenitalanomali', 'safetyreportversion', 'primarysourcecountry', 'occurcountry', 'reporttype', 'duplicate', 'reportduplicate.duplicatesource', 'reportduplicate.duplicatenumb', 'sender.sendertype', 'receiver.receivertype', 'receiver.receiverorganization']
+2025-10-06 11:09:05,083 - DEBUG - Extracting patient table...
+2025-10-06 11:09:05,091 - DEBUG - Patient table extracted with 6009 rows.
+2025-10-06 11:09:05,092 - DEBUG - Dropping columns: ['age_group', 'narrative', 'death_date', 'death_date_format']
+2025-10-06 11:09:05,094 - DEBUG - Extracting drug table...
+2025-10-06 11:09:09,867 - DEBUG - Drug table extracted with 32565 rows.
+2025-10-06 11:09:09,876 - DEBUG - Dropping columns: ['drugbatchnumb', 'drugtreatmentdurationunit', 'actiondrug', 'drugrecurreadministration', 'drugadditional', 'activesubstance.activesubstancename', 'drugdosageform', 'drugstructuredosagenumb', 'drugstructuredosageunit']
+2025-10-06 11:09:09,882 - DEBUG - Extracting reaction table...
+2025-10-06 11:09:09,936 - DEBUG - Reaction table extracted with 25533 rows.
+2025-10-06 11:09:09,938 - DEBUG - Dropping columns: ['reactionmeddraversionpt', 'reactionoutcome']
+2025-10-06 11:09:09,939 - DEBUG - Successfully created SQLAlchemy engine for database: openfda_db
+2025-10-06 11:09:10,286 - DEBUG - Successfully wrote table 'report' with 6009 rows.
+2025-10-06 11:09:10,369 - DEBUG - Successfully wrote table 'patient' with 6009 rows.
+2025-10-06 11:09:17,836 - DEBUG - Successfully wrote table 'drug' with 32565 rows.
+2025-10-06 11:09:18,326 - DEBUG - Successfully wrote table 'reaction' with 25533 rows.
+2025-10-06 11:09:18,327 - DEBUG - ETL completed successfully.
+2025-10-06 11:09:18,495 - INFO - ETL process completed for all files.
